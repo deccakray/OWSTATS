@@ -1,3 +1,2 @@
 # OWSTATS
-# OWSTATS\nFinal Repo lol
-# OWSTATS
+# final repo lol
