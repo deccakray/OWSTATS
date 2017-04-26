@@ -75,8 +75,5 @@ public class OWGameStats {
         this.medalsGold = (Double)stats.get("medals_gold");
         this.deaths = (Double)stats.get("deaths");
         this.objectiveTime = (Double)stats.get("objective_time");
-
-
     }
-
 }
