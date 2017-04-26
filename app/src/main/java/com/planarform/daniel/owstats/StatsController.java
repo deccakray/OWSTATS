@@ -21,7 +21,7 @@ public class StatsController extends SearchController {
         Intent intent = getIntent();
         OWPlayer player = (OWPlayer)intent.getExtras().getSerializable("player");
 
-        int deaths = player.usStats.competitive.hero.dva.mechDeaths;
-        test.setText(deaths);
+        Double deaths = player.usStats.competitive.hero.dva.mechDeaths;
+        test.setText(Double.toString(deaths));
     }
 }

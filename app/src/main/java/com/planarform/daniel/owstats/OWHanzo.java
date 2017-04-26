@@ -7,18 +7,18 @@ import java.util.Map;
  */
 
 public class OWHanzo extends OWHero {
-    Integer scatterArrowKills;
-    Integer dragonStrikeKills;
-    Integer dragonStrikeKillsMostInGame;
-    Integer scatterArrowKillsMostInGame;
-    Integer reconAssistsMostInGame;
+    Double scatterArrowKills;
+    Double dragonStrikeKills;
+    Double dragonStrikeKillsMostInGame;
+    Double scatterArrowKillsMostInGame;
+    Double reconAssistsMostInGame;
 
     public OWHanzo(Map stats) {
         super(stats);
-        this.scatterArrowKills = (Integer)stats.get("scatter_arrow_kills");
-        this.dragonStrikeKills = (Integer)stats.get("dragonstrike_kills");
-        this.dragonStrikeKillsMostInGame = (Integer)stats.get("dragonstrike_kills_most_in_game");
-        this.scatterArrowKillsMostInGame = (Integer)stats.get("scatter_arrow_kills_most_in_game");
-        this.reconAssistsMostInGame = (Integer)stats.get("recon_assists_most_in_game");
+        this.scatterArrowKills = (Double)stats.get("scatter_arrow_kills");
+        this.dragonStrikeKills = (Double)stats.get("dragonstrike_kills");
+        this.dragonStrikeKillsMostInGame = (Double)stats.get("dragonstrike_kills_most_in_game");
+        this.scatterArrowKillsMostInGame = (Double)stats.get("scatter_arrow_kills_most_in_game");
+        this.reconAssistsMostInGame = (Double)stats.get("recon_assists_most_in_game");
     }
 }

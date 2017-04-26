@@ -1,6 +1,7 @@
 package com.planarform.daniel.owstats;
 
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -34,6 +35,9 @@ public class OWHeroStats {
     OWGenji genji;
 
     public OWHeroStats(Map stats) {
+//        if(stats.get("dva")!= null){
+//            this.dva = new OWDva((Map)stats.get("dva"));
+//        }
         this.dva = new OWDva((Map)stats.get("dva"));
         this.orisa = new OWOrisa((Map)stats.get("orisa"));
         this.widowmaker = new OWWidowmaker((Map)stats.get("widowmaker"));

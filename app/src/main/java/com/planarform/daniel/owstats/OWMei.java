@@ -7,22 +7,22 @@ import java.util.Map;
  */
 
 public class OWMei extends OWHero {
-    Integer enemiesFrozen;
-    Integer damageBlockedMostInGame;
-    Integer enemiesFrozenMostInGame;
-    Integer meleeFinalBlowsMostInGame;
-    Integer damageBlocked;
-    Integer blizzardKills;
-    Integer blizzardKillsMostInGame;
+    Double enemiesFrozen;
+    Double damageBlockedMostInGame;
+    Double enemiesFrozenMostInGame;
+    Double meleeFinalBlowsMostInGame;
+    Double damageBlocked;
+    Double blizzardKills;
+    Double blizzardKillsMostInGame;
 
     public OWMei(Map stats) {
         super(stats);
-        this.enemiesFrozen = (Integer)stats.get("enemies_frozen");
-        this.damageBlockedMostInGame = (Integer)stats.get("damage_blocked_most_in_game");
-        this.enemiesFrozenMostInGame = (Integer)stats.get("enemies_frozen_most_in_game");
-        this.meleeFinalBlowsMostInGame = (Integer)stats.get("melee_final_blows_most_in_game");
-        this.damageBlocked = (Integer)stats.get("damage_blocked");
-        this.blizzardKills = (Integer)stats.get("blizzard_kills");
-        this.blizzardKillsMostInGame = (Integer)stats.get("blizzardKillsMostInGame");
+        this.enemiesFrozen = (Double)stats.get("enemies_frozen");
+        this.damageBlockedMostInGame = (Double)stats.get("damage_blocked_most_in_game");
+        this.enemiesFrozenMostInGame = (Double)stats.get("enemies_frozen_most_in_game");
+        this.meleeFinalBlowsMostInGame = (Double)stats.get("melee_final_blows_most_in_game");
+        this.damageBlocked = (Double)stats.get("damage_blocked");
+        this.blizzardKills = (Double)stats.get("blizzard_kills");
+        this.blizzardKillsMostInGame = (Double)stats.get("blizzardKillsMostInGame");
     }
 }

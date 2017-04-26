@@ -66,13 +66,13 @@ public class SearchController extends Activity {
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
-                                    showAlertToUser("Player not found");
+                                    showAlertToUser(e.getMessage());
                                 }
                             }
                         @Override
                         public void onError(VolleyError error) {
                             error.printStackTrace();
-                            showAlertToUser("Battletag not found, try again");
+                            showAlertToUser("Error: " + error.getMessage());
                         }
                         @Override
                         public void onImageDownloaded(Bitmap b) {}

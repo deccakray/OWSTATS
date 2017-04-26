@@ -7,16 +7,16 @@ import java.util.Map;
  */
 
 public class OWReaper extends OWHero {
-    Integer deathBlossomKillsMostInGame;
-    Integer soulsConsumedMostInGame;
-    Integer deathBlossomKills;
-    Integer soulsConsumed;
+    Double deathBlossomKillsMostInGame;
+    Double soulsConsumedMostInGame;
+    Double deathBlossomKills;
+    Double soulsConsumed;
 
     public OWReaper (Map stats) {
         super(stats);
-        this.deathBlossomKillsMostInGame = (Integer)stats.get("death_blossom_kills_most_in_game");
-        this.soulsConsumedMostInGame = (Integer)stats.get("souls_consumed_most_in_game");
-        this.deathBlossomKills = (Integer)stats.get("death_blossom_kills");
-        this.soulsConsumed = (Integer)stats.get("souls_consumed");
+        this.deathBlossomKillsMostInGame = (Double)stats.get("death_blossom_kills_most_in_game");
+        this.soulsConsumedMostInGame = (Double)stats.get("souls_consumed_most_in_game");
+        this.deathBlossomKills = (Double)stats.get("death_blossom_kills");
+        this.soulsConsumed = (Double)stats.get("souls_consumed");
     }
 }

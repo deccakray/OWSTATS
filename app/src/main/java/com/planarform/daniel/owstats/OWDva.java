@@ -9,19 +9,19 @@ import java.util.Map;
  */
 
 public class OWDva extends OWHero {
-    Integer mechsCalledMostInGame;
-    Integer mechsCalled;
-    Integer damageBlockedMostInGame;
-    Integer mechDeaths;
-    Integer damageBlocked;
+    Double mechsCalledMostInGame;
+    Double mechsCalled;
+    Double damageBlockedMostInGame;
+    Double mechDeaths;
+    Double damageBlocked;
 
     public OWDva(Map stats) {
         // make sure super class gets all its properties initialized
         super(stats);
-        this.mechsCalledMostInGame = (Integer)stats.get("mechs_called_most_in_game");
-        this.mechsCalled = (Integer)stats.get("mechs_called");
-        this.damageBlockedMostInGame = (Integer)stats.get("damage_blocked_most_in_game");
-        this.mechDeaths = (Integer)stats.get("mech_deaths");
-        this.damageBlocked = (Integer)stats.get("damage_blocked");
+        this.mechsCalledMostInGame = (Double)stats.get("mechs_called_most_in_game");
+        this.mechsCalled = (Double)stats.get("mechs_called");
+        this.damageBlockedMostInGame = (Double)stats.get("damage_blocked_most_in_game");
+        this.mechDeaths = (Double)stats.get("mech_deaths");
+        this.damageBlocked = (Double)stats.get("damage_blocked");
     }
 }

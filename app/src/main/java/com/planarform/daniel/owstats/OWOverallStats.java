@@ -7,27 +7,27 @@ import java.util.Map;
  */
 
 public class OWOverallStats {
-    Integer losses;
-    Integer compRank;
+    Double losses;
+    Double compRank;
     Double winRate;
-    Integer prestige;
+    Double prestige;
     String avatar;
     String tier;
     String rankImage;
-    Integer wins;
-    Integer games;
-    Integer level;
+    Double wins;
+    Double games;
+    Double level;
 
     public OWOverallStats(Map stats) {
-        this.losses = (Integer)stats.get("losses");
-        this.compRank = (Integer)stats.get("comp_rank");
+        this.losses = (Double)stats.get("losses");
+        this.compRank = (Double)stats.get("comp_rank");
         this.winRate = (Double)stats.get("win_rate");
-        this.prestige = (Integer)stats.get("prestige");
+        this.prestige = (Double)stats.get("prestige");
         this.avatar = (String)stats.get("avatar");
         this.tier = (String)stats.get("tier");
         this.rankImage = (String)stats.get("rank_image");
-        this.wins = (Integer)stats.get("wins");
-        this.games = (Integer)stats.get("games");
-        this.level = (Integer)stats.get("level");
+        this.wins = (Double)stats.get("wins");
+        this.games = (Double)stats.get("games");
+        this.level = (Double)stats.get("level");
     }
 }

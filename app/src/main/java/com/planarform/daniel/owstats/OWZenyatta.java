@@ -7,10 +7,10 @@ import java.util.Map;
  */
 
 public class OWZenyatta extends OWHero {
-    Integer transcendenceHealingBest;
+    Double transcendenceHealingBest;
 
     public OWZenyatta(Map stats) {
         super(stats);
-        this.transcendenceHealingBest = (Integer)stats.get("transcendence_healing_best");
+        this.transcendenceHealingBest = (Double)stats.get("transcendence_healing_best");
     }
 }

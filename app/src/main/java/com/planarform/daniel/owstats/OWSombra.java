@@ -7,11 +7,11 @@ import java.util.Map;
  */
 
 public class OWSombra extends OWHero {
-    Integer finalBlows;
+    Double finalBlows;
 
     public OWSombra(Map stats) {
         super(stats);
-        this.finalBlows = (Integer)stats.get("melee_final_blows_most_in_game");
+        this.finalBlows = (Double)stats.get("melee_final_blows_most_in_game");
     }
 
 }

@@ -7,10 +7,10 @@ import java.util.Map;
  */
 
 public class OWOrisa extends OWHero {
-    Integer finalBlows;
+    Double finalBlows;
     public OWOrisa(Map stats){
         super(stats);
-        this.finalBlows = (Integer)stats.get("melee_final_blow_most_in_game");
+        this.finalBlows = (Double)stats.get("melee_final_blow_most_in_game");
     }
 }
 

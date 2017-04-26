@@ -7,22 +7,22 @@ import java.util.Map;
  */
 
 public class OWTorbjorn extends OWHero {
-    Integer torbjornKills;
-    Integer moltenCoreKills;
-    Integer torbjornKillsMostInGame;
-    Integer moltenCoreKillsMostInGame;
-    Integer turretKills;
-    Integer meleeFinalBlowsMostInGame;
-    Integer armorPacksCreated;
+    Double torbjornKills;
+    Double moltenCoreKills;
+    Double torbjornKillsMostInGame;
+    Double moltenCoreKillsMostInGame;
+    Double turretKills;
+    Double meleeFinalBlowsMostInGame;
+    Double armorPacksCreated;
 
     public OWTorbjorn(Map stats) {
         super(stats);
-        this.torbjornKills = (Integer)stats.get("torbjorn_kills");
-        this.moltenCoreKills = (Integer)stats.get("molten_core_kills");
-        this.torbjornKillsMostInGame = (Integer)stats.get("torbjorn_kills_most_in_game");
-        this.moltenCoreKillsMostInGame = (Integer)stats.get("molten_core_kills_most_in_game");
-        this.turretKills = (Integer)stats.get("turret_kills");
-        this.meleeFinalBlowsMostInGame = (Integer)stats.get("melee_final_blows_most_in_game");
-        this.armorPacksCreated = (Integer)stats.get("armor_packs_created");
+        this.torbjornKills = (Double)stats.get("torbjorn_kills");
+        this.moltenCoreKills = (Double)stats.get("molten_core_kills");
+        this.torbjornKillsMostInGame = (Double)stats.get("torbjorn_kills_most_in_game");
+        this.moltenCoreKillsMostInGame = (Double)stats.get("molten_core_kills_most_in_game");
+        this.turretKills = (Double)stats.get("turret_kills");
+        this.meleeFinalBlowsMostInGame = (Double)stats.get("melee_final_blows_most_in_game");
+        this.armorPacksCreated = (Double)stats.get("armor_packs_created");
     }
 }

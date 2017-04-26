@@ -7,12 +7,12 @@ import java.util.Map;
  */
 
 public class OWSymmetra extends OWHero {
-    Integer sentryTurretKills;
-    Integer sentryTurretKillsMostInGame;
+    Double sentryTurretKills;
+    Double sentryTurretKillsMostInGame;
 
     public OWSymmetra(Map stats) {
         super(stats);
-        this.sentryTurretKills = (Integer)stats.get("sentry_turret_kills");
-        this.sentryTurretKillsMostInGame = (Integer)stats.get("sentry_turret_kills_most_in_game");
+        this.sentryTurretKills = (Double)stats.get("sentry_turret_kills");
+        this.sentryTurretKillsMostInGame = (Double)stats.get("sentry_turret_kills_most_in_game");
     }
 }

@@ -7,21 +7,21 @@ import java.util.Map;
  */
 
 public class OWBastion extends OWHero {
-    Integer tankKillsMostInGame;
-    Integer reconKillsMostInGame;
-    Integer sentryKills;
-    Integer tankKills;
-    Integer sentryKillsMostInGame;
-    Integer reconKills;
+    Double tankKillsMostInGame;
+    Double reconKillsMostInGame;
+    Double sentryKills;
+    Double tankKills;
+    Double sentryKillsMostInGame;
+    Double reconKills;
 
     public OWBastion (Map stats){
         super(stats);
-        this.tankKills = (Integer)stats.get("tank_kills");
-        this.tankKillsMostInGame = (Integer)stats.get("tank_kills_most_in_game");
-        this.reconKills = (Integer)stats.get("recon_kills");
-        this.reconKillsMostInGame = (Integer)stats.get("recon_kills_most_in_game");
-        this.sentryKills = (Integer)stats.get("sentry_kills");
-        this.sentryKillsMostInGame = (Integer)stats.get("sentry_kills_most_in_game");
+        this.tankKills = (Double)stats.get("tank_kills");
+        this.tankKillsMostInGame = (Double)stats.get("tank_kills_most_in_game");
+        this.reconKills = (Double)stats.get("recon_kills");
+        this.reconKillsMostInGame = (Double)stats.get("recon_kills_most_in_game");
+        this.sentryKills = (Double)stats.get("sentry_kills");
+        this.sentryKillsMostInGame = (Double)stats.get("sentry_kills_most_in_game");
     }
 
 }

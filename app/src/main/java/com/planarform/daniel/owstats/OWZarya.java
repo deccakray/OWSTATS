@@ -7,29 +7,29 @@ import java.util.Map;
  */
 
 public class OWZarya extends OWHero{
-    Integer damageBlockedMostInGame;
-    Integer damageBlocked;
-    Integer meleeFinalBlowMostInGame;
-    Integer lifetimeEnergyAccumulation;
-    Integer lifetimGravitonSurgeKills;
-    Integer projectedBarriersSupplied;
-    Integer highEnergyKills;
-    Integer gravitonSurgeKillsMostInGame;
-    Integer energyMaximum;
-    Integer highEnergyKillsMostInGame;
+    Double damageBlockedMostInGame;
+    Double damageBlocked;
+    Double meleeFinalBlowMostInGame;
+    Double lifetimeEnergyAccumulation;
+    Double lifetimGravitonSurgeKills;
+    Double projectedBarriersSupplied;
+    Double highEnergyKills;
+    Double gravitonSurgeKillsMostInGame;
+    Double energyMaximum;
+    Double highEnergyKillsMostInGame;
 
     public OWZarya(Map stats) {
         super(stats);
-        this.damageBlockedMostInGame = (Integer)stats.get("damage_blocked_most_in_game");
-        this.damageBlocked = (Integer)stats.get("damage_blocked");
-        this.meleeFinalBlowMostInGame = (Integer)stats.get("melee_final_blow_most_in_game");
-        this.lifetimeEnergyAccumulation = (Integer)stats.get("lifetime_energy_accumulation");
-        this.lifetimGravitonSurgeKills = (Integer)stats.get("lifetime_graviton_surge_kills");
-        this.projectedBarriersSupplied = (Integer)stats.get("projected_barrier_supplied");
-        this.highEnergyKills = (Integer)stats.get("high_energy_kills");
-        this.gravitonSurgeKillsMostInGame = (Integer)stats.get("graviton_surge_kills_most_in_game");
-        this.energyMaximum = (Integer)stats.get("energy_maximum");
-        this.highEnergyKillsMostInGame = (Integer)stats.get("high_energy_kills_most_in_game");
+        this.damageBlockedMostInGame = (Double)stats.get("damage_blocked_most_in_game");
+        this.damageBlocked = (Double)stats.get("damage_blocked");
+        this.meleeFinalBlowMostInGame = (Double)stats.get("melee_final_blow_most_in_game");
+        this.lifetimeEnergyAccumulation = (Double)stats.get("lifetime_energy_accumulation");
+        this.lifetimGravitonSurgeKills = (Double)stats.get("lifetime_graviton_surge_kills");
+        this.projectedBarriersSupplied = (Double)stats.get("projected_barrier_supplied");
+        this.highEnergyKills = (Double)stats.get("high_energy_kills");
+        this.gravitonSurgeKillsMostInGame = (Double)stats.get("graviton_surge_kills_most_in_game");
+        this.energyMaximum = (Double)stats.get("energy_maximum");
+        this.highEnergyKillsMostInGame = (Double)stats.get("high_energy_kills_most_in_game");
 
     }
 }

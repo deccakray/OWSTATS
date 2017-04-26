@@ -7,14 +7,14 @@ import java.util.Map;
  */
 
 public class OWLucio extends OWHero {
-    Integer soundBarriersProvided;
-    Integer soundBarriersProvidedMostInGame;
-    Integer meleeFinalBlowMostInGame;
+    Double soundBarriersProvided;
+    Double soundBarriersProvidedMostInGame;
+    Double meleeFinalBlowMostInGame;
 
     public OWLucio(Map stats) {
         super(stats);
-        this.soundBarriersProvided = (Integer)stats.get("sound_barriers_provided");
-        this.soundBarriersProvidedMostInGame = (Integer)stats.get("sound_barriers_provided_most_in_game");
-        this.meleeFinalBlowMostInGame = (Integer)stats.get("melee_final_blows_most_in_game");
+        this.soundBarriersProvided = (Double)stats.get("sound_barriers_provided");
+        this.soundBarriersProvidedMostInGame = (Double)stats.get("sound_barriers_provided_most_in_game");
+        this.meleeFinalBlowMostInGame = (Double)stats.get("melee_final_blows_most_in_game");
     }
 }

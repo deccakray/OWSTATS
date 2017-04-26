@@ -7,24 +7,24 @@ import java.util.Map;
  */
 
 public class OWReinhardt extends OWHero {
-    Integer damageBlockedMostInGame;
-    Integer damageBlocked;
-    Integer fireStrikeKillsMostInGame;
-    Integer chargeKillsMostInGame;
-    Integer earthshatterKillsMostInGame;
-    Integer chargeKills;
-    Integer earthshatterKills;
-    Integer fireStrikeKills;
+    Double damageBlockedMostInGame;
+    Double damageBlocked;
+    Double fireStrikeKillsMostInGame;
+    Double chargeKillsMostInGame;
+    Double earthshatterKillsMostInGame;
+    Double chargeKills;
+    Double earthshatterKills;
+    Double fireStrikeKills;
 
     public OWReinhardt (Map stats) {
         super(stats);
-        this.damageBlockedMostInGame = (Integer)stats.get("damage_blocked_most_in_game");
-        this.damageBlocked = (Integer)stats.get("damage_blocked");
-        this.fireStrikeKills = (Integer)stats.get("fire_strike_kills");
-        this.fireStrikeKillsMostInGame = (Integer)stats.get("fire_strike_kills_most_in_game");
-        this.chargeKillsMostInGame = (Integer)stats.get("charge_kills_most_in_game");
-        this.earthshatterKills = (Integer)stats.get("earthshatter_kills");
-        this.earthshatterKillsMostInGame = (Integer)stats.get("earthshatter_kills_most_in_game");
-        this.chargeKills = (Integer)stats.get("charge_kills");
+        this.damageBlockedMostInGame = (Double)stats.get("damage_blocked_most_in_game");
+        this.damageBlocked = (Double)stats.get("damage_blocked");
+        this.fireStrikeKills = (Double)stats.get("fire_strike_kills");
+        this.fireStrikeKillsMostInGame = (Double)stats.get("fire_strike_kills_most_in_game");
+        this.chargeKillsMostInGame = (Double)stats.get("charge_kills_most_in_game");
+        this.earthshatterKills = (Double)stats.get("earthshatter_kills");
+        this.earthshatterKillsMostInGame = (Double)stats.get("earthshatter_kills_most_in_game");
+        this.chargeKills = (Double)stats.get("charge_kills");
     }
 }

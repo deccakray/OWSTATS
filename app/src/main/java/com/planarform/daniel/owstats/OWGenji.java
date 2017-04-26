@@ -7,21 +7,21 @@ import java.util.Map;
  */
 
 public class OWGenji extends OWHero {
-    Integer dragonbladeKillsMostInGame;
-    Integer damageReflectedMostInGame;
-    Integer meleeFinalBlowsMostInGame;
-    Integer dragonblades;
-    Integer dragonbladeKills;
-    Integer damageReflected;
+    Double dragonbladeKillsMostInGame;
+    Double damageReflectedMostInGame;
+    Double meleeFinalBlowsMostInGame;
+    Double dragonblades;
+    Double dragonbladeKills;
+    Double damageReflected;
 
     public OWGenji(Map stats){
         super(stats);
-        this.dragonbladeKillsMostInGame = (Integer)stats.get("dragonblade_kills_most_in_game");
-        this.damageReflectedMostInGame = (Integer)stats.get("damage_reflected_most_in_game");
-        this.meleeFinalBlowsMostInGame = (Integer)stats.get("melee_final_blows_most_in_game");
-        this.dragonblades = (Integer)stats.get("dragonblades");
-        this.dragonbladeKills = (Integer)stats.get("dragonblade_kills");
-        this.damageReflected = (Integer)stats.get("damage_reflected");
+        this.dragonbladeKillsMostInGame = (Double)stats.get("dragonblade_kills_most_in_game");
+        this.damageReflectedMostInGame = (Double)stats.get("damage_reflected_most_in_game");
+        this.meleeFinalBlowsMostInGame = (Double)stats.get("melee_final_blows_most_in_game");
+        this.dragonblades = (Double)stats.get("dragonblades");
+        this.dragonbladeKills = (Double)stats.get("dragonblade_kills");
+        this.damageReflected = (Double)stats.get("damage_reflected");
 
     }
 }

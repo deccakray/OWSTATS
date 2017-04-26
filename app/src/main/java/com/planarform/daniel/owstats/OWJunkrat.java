@@ -7,20 +7,20 @@ import java.util.Map;
  */
 
 public class OWJunkrat extends OWHero{
-    Integer ripTireKillsMostInGame;
-    Integer ripTireKills;
-    Integer enemiesTrapped;
-    Integer enemiesTrappedMostInGame;
-    Integer meleeFinalBlowMostInGame;
+    Double ripTireKillsMostInGame;
+    Double ripTireKills;
+    Double enemiesTrapped;
+    Double enemiesTrappedMostInGame;
+    Double meleeFinalBlowMostInGame;
     Double enemiesTrappedAMinute;
 
     public OWJunkrat(Map stats) {
         super(stats);
-        this.ripTireKillsMostInGame = (Integer)stats.get("rip_tire_kills_most_in_game");
-        this.ripTireKills = (Integer)stats.get("rip_tire_kills");
-        this.enemiesTrapped = (Integer)stats.get("enemies_trapped");
-        this.enemiesTrappedMostInGame = (Integer)stats.get("enemies_trapped_most_in_game");
+        this.ripTireKillsMostInGame = (Double)stats.get("rip_tire_kills_most_in_game");
+        this.ripTireKills = (Double)stats.get("rip_tire_kills");
+        this.enemiesTrapped = (Double)stats.get("enemies_trapped");
+        this.enemiesTrappedMostInGame = (Double)stats.get("enemies_trapped_most_in_game");
         this.enemiesTrappedAMinute = (Double)stats.get("enemies_trapped_a_minute");
-        this.meleeFinalBlowMostInGame = (Integer)stats.get("melee_final_blows_most_in_game");
+        this.meleeFinalBlowMostInGame = (Double)stats.get("melee_final_blows_most_in_game");
     }
 }

@@ -7,13 +7,13 @@ import java.util.Map;
  */
 
 public class OWMercy extends OWHero {
-    Integer playersResurrectedMostInGame;
-    Integer playersRessurrected;
+    Double playersResurrectedMostInGame;
+    Double playersRessurrected;
 
     public OWMercy(Map stats) {
         super(stats);
-        this.playersResurrectedMostInGame = (Integer)stats.get("players_resurrected_most_in_game");
-        this.playersRessurrected = (Integer)stats.get("players_resurrected");
+        this.playersResurrectedMostInGame = (Double)stats.get("players_resurrected_most_in_game");
+        this.playersRessurrected = (Double)stats.get("players_resurrected");
 
     }
 

@@ -17,12 +17,8 @@ package com.planarform.daniel.owstats;
         import com.android.volley.toolbox.ImageRequest;
         import com.android.volley.toolbox.JsonObjectRequest;
         import com.android.volley.toolbox.Volley;
-
         import org.json.JSONObject;
 
-/**
- * Created by Daniel on 11/24/16.
- */
 public class NetworkingManager {
 
     /*Initializing Variables*/

@@ -7,12 +7,12 @@ import java.util.Map;
  */
 
 public class OWHero {
-    Integer turretsDestroyed;
-    Integer environmentalDeaths;
-    Integer teleporterPadsDestroyed;
-    Integer shotsHit;
+    Double turretsDestroyed;
+    Double environmentalDeaths;
+    Double teleporterPadsDestroyed;
+    Double shotsHit;
 
     public OWHero(Map stats) {
-        this.turretsDestroyed = (Integer)stats.get("turrets_destroyed");
+        this.turretsDestroyed = (Double)stats.get("turrets_destroyed");
     }
 }

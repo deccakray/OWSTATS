@@ -7,26 +7,26 @@ import java.util.Map;
  */
 
 public class OWWinston extends OWHero {
-    Integer damageBlockedMostInGame;
-    Integer damageBlocked;
-    Integer playersKnockedBack;
-    Integer meleeKills;
-    Integer playersKnockedBackMostInGame;
-    Integer jumpPackKills;
-    Integer jumpPackKillsMostInGame;
-    Integer meleeFinalBlowsMostInGame;
-    Integer meleeKillsMostInGame;
+    Double damageBlockedMostInGame;
+    Double damageBlocked;
+    Double playersKnockedBack;
+    Double meleeKills;
+    Double playersKnockedBackMostInGame;
+    Double jumpPackKills;
+    Double jumpPackKillsMostInGame;
+    Double meleeFinalBlowsMostInGame;
+    Double meleeKillsMostInGame;
 
     public OWWinston(Map stats) {
         super(stats);
-        this.damageBlockedMostInGame = (Integer)stats.get("damage_blocked_most_in_game");
-        this.damageBlocked = (Integer)stats.get("damage_blocked");
-        this.playersKnockedBack = (Integer)stats.get("players_knocked_back");
-        this.meleeKills = (Integer)stats.get("melee_kills");
-        this.playersKnockedBackMostInGame = (Integer)stats.get("players_knocked_back_most_in_game");
-        this.jumpPackKills = (Integer)stats.get("jump_pack_kills");
-        this.jumpPackKillsMostInGame = (Integer)stats.get("jump_pack_kills_most_in_game");
-        this.meleeFinalBlowsMostInGame = (Integer)stats.get("melee_final_blows_most_in_game");
-        this.meleeKillsMostInGame = (Integer)stats.get("melee_kills_most_in_game");
+        this.damageBlockedMostInGame = (Double)stats.get("damage_blocked_most_in_game");
+        this.damageBlocked = (Double)stats.get("damage_blocked");
+        this.playersKnockedBack = (Double)stats.get("players_knocked_back");
+        this.meleeKills = (Double)stats.get("melee_kills");
+        this.playersKnockedBackMostInGame = (Double)stats.get("players_knocked_back_most_in_game");
+        this.jumpPackKills = (Double)stats.get("jump_pack_kills");
+        this.jumpPackKillsMostInGame = (Double)stats.get("jump_pack_kills_most_in_game");
+        this.meleeFinalBlowsMostInGame = (Double)stats.get("melee_final_blows_most_in_game");
+        this.meleeKillsMostInGame = (Double)stats.get("melee_kills_most_in_game");
     }
 }
