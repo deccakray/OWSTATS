@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -50,7 +52,7 @@ public class SearchController extends Activity {
                 if(OWPlayer.isValidBattleTag(input)) {
                     input = input.replace("#","-");
                     String url = "https://owapi.net/api/v3/u/" + input + "/blob";
-                    NetworkingManager networkManager = new NetworkingManager().getInstance();
+                    NetworkingManager networkManager = NetworkingManager.getInstance();
 
                     networkManager.sendGetRequest(url, new NetworkingListener<String, VolleyError>() {
                             @Override
@@ -59,8 +61,10 @@ public class SearchController extends Activity {
 
                                     Map r = OWPlayer.setJSON(response);
                                     OWPlayer player  = new OWPlayer(r, input);
+
                                     Intent intent = new Intent(SearchController.this, StatsController.class);
-                                    intent.putExtra("player", (Serializable) player);
+
+                                    intent.putExtra("player", player);
                                     startActivity(intent);
 
 

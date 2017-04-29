@@ -2,6 +2,7 @@ package com.planarform.daniel.owstats;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.TextView;
 
 /**
@@ -19,9 +20,9 @@ public class StatsController extends SearchController {
         test = (TextView)findViewById(R.id.test);
 
         Intent intent = getIntent();
-        OWPlayer player = (OWPlayer)intent.getExtras().getSerializable("player");
+        OWPlayer player = (OWPlayer) intent.getParcelableExtra("player");
 
-        Double deaths = player.usStats.competitive.hero.dva.mechDeaths;
+        Double deaths = player.usStats.quickplay.game.turretsDestroyed;
         test.setText(Double.toString(deaths));
     }
 }

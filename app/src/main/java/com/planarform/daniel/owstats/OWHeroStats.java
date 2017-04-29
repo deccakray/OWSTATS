@@ -125,7 +125,7 @@ public class OWHeroStats {
         //this.mccree = new OWMccree((Map)stats.get("mccree"));
 
         if(stats.get("reinhardt")!= null){
-            this.reinhardt = new OWReinhardt((Map)stats.get("reainhardt"));
+            this.reinhardt = new OWReinhardt((Map)stats.get("reinhardt"));
         }
         //this.reinhardt = new OWReinhardt((Map)stats.get("reinhardt"));
 

@@ -1,17 +1,20 @@
 package com.planarform.daniel.owstats;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
  * Created by Daniel on 4/10/17.
  */
 
-public class OWPlayer {
+public class OWPlayer implements Parcelable{
 
     OWStats usStats;
     OWStats krStats;
@@ -20,7 +23,7 @@ public class OWPlayer {
     String battleTag;
     String platform;
     ImageView icon;
-    public OWPlayer(Map stats, String battleTag) {
+    public OWPlayer(Map stats, String battleTag)  {
         this.battleTag = battleTag;
         if(!setAllStats(stats)) {
             System.out.println("There was an error finding stats");
@@ -30,6 +33,37 @@ public class OWPlayer {
         }
 
     }
+
+    protected OWPlayer(Parcel in) {
+        battleTag = in.readString();
+        platform = in.readString();
+        anyStats = in.readParcelable(OWStats.class.getClassLoader());
+    }
+
+    public static final Creator<OWPlayer> CREATOR = new Creator<OWPlayer>() {
+        @Override
+        public OWPlayer createFromParcel(Parcel in) {
+            return new OWPlayer(in);
+        }
+
+        @Override
+        public OWPlayer[] newArray(int size) {
+            return new OWPlayer[size];
+        }
+    };
+
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(anyStats, flags);
+        dest.writeString(battleTag);
+        dest.writeString(platform);
+
+    }
+
 
     // int dvaElims = player.usStats.competitive.her.dva.eliminations;
     // int deaths = player.krStats.quickplay.overall.deaths;
