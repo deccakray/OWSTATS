@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by Daniel on 4/10/17.
  */
 
-public class OWPlayer implements Parcelable{
+public class OWPlayer implements Serializable{
 
     OWStats usStats;
     OWStats krStats;
@@ -34,35 +34,9 @@ public class OWPlayer implements Parcelable{
 
     }
 
-    protected OWPlayer(Parcel in) {
-        battleTag = in.readString();
-        platform = in.readString();
-        anyStats = in.readParcelable(OWStats.class.getClassLoader());
-    }
 
-    public static final Creator<OWPlayer> CREATOR = new Creator<OWPlayer>() {
-        @Override
-        public OWPlayer createFromParcel(Parcel in) {
-            return new OWPlayer(in);
-        }
 
-        @Override
-        public OWPlayer[] newArray(int size) {
-            return new OWPlayer[size];
-        }
-    };
 
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(anyStats, flags);
-        dest.writeString(battleTag);
-        dest.writeString(platform);
-
-    }
 
 
     // int dvaElims = player.usStats.competitive.her.dva.eliminations;

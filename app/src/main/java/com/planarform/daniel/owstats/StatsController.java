@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.widget.TextView;
 
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Daniel on 3/22/17.
  * This class will display stats that the user searches.
@@ -20,7 +24,10 @@ public class StatsController extends SearchController {
         test = (TextView)findViewById(R.id.test);
 
         Intent intent = getIntent();
-        OWPlayer player = (OWPlayer) intent.getParcelableExtra("player");
+
+      Map playerMap = (HashMap<String, Object>) intent.getSerializableExtra("player_map");
+      OWPlayer player = new OWPlayer(playerMap, (String) playerMap.get("battle_tag"));
+//       OWPlayer player =  SerializationUtil.deserialize(playerByteArray);
 
         Double deaths = player.usStats.quickplay.game.turretsDestroyed;
         test.setText(Double.toString(deaths));

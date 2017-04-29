@@ -19,6 +19,7 @@ import com.google.gson.JsonParseException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -59,12 +60,13 @@ public class SearchController extends Activity {
                         public void onResponse(String response) {
                                 try {
 
-                                    Map r = OWPlayer.setJSON(response);
-                                    OWPlayer player  = new OWPlayer(r, input);
+                                    Map playerMap = OWPlayer.setJSON(response);
+                                   playerMap.put("battle_tag", input);
+
+                                    HashMap<String, Object> hashy = new HashMap<String, Object>(playerMap);
 
                                     Intent intent = new Intent(SearchController.this, StatsController.class);
-
-                                    intent.putExtra("player", player);
+                                    intent.putExtra("player_map", hashy);
                                     startActivity(intent);
 
 
