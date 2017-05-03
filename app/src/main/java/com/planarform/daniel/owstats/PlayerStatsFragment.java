@@ -57,7 +57,7 @@ public class PlayerStatsFragment extends Fragment {
         kpdView = (TextView)rootView.findViewById((R.id.kpd));
 
         Bundle bundle = getArguments();
-       final OWPlayer player = (OWPlayer) bundle.getSerializable("player");
+        final OWPlayer player = (OWPlayer) bundle.getSerializable("player");
         String regionselection = player.regionSelection;
 
 
