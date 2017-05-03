@@ -23,7 +23,9 @@ public class OWPlayer implements Serializable{
     String battleTag;
     String platform;
     ImageView icon;
-    public OWPlayer(Map stats, String battleTag)  {
+    String regionSelection;
+    public OWPlayer(Map stats, String battleTag, String regionSelection)  {
+        this.regionSelection = regionSelection;
         this.battleTag = battleTag;
         if(!setAllStats(stats)) {
             System.out.println("There was an error finding stats");
@@ -44,18 +46,19 @@ public class OWPlayer implements Serializable{
 
     private boolean setAllStats(Map stats) {
        boolean didSetStat = false;
-        if(stats.get("us")!=null) {
-            usStats = new OWStats((Map)stats.get("us"));
-            didSetStat = true;
-        }
-        if(stats.get("kr")!=null) {
-            krStats = new OWStats((Map)stats.get("kr"));
-            didSetStat = true;
-        }
-        if(stats.get("eu")!=null) {
-            euStats = new OWStats((Map)stats.get("eu"));
-            didSetStat = true;
-        }
+            if(stats.get("us")!=null) {
+                usStats = new OWStats((Map)stats.get("us"));
+                didSetStat = true;
+            }
+            if(stats.get("kr")!=null) {
+                krStats = new OWStats((Map)stats.get("kr"));
+                didSetStat = true;
+            }
+           if(stats.get("eu")!=null) {
+               euStats = new OWStats((Map)stats.get("eu"));
+               didSetStat = true;
+           }
+
         if(stats.get("any")!=null) {
             anyStats = new OWStats((Map)stats.get("any"));
             didSetStat = true;

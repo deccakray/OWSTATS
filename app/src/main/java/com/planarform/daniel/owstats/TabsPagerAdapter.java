@@ -32,9 +32,11 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
                 return playerStatsTab;
             case 1:
                 TopHeroesFragment topHeroesTab = new TopHeroesFragment();
+                topHeroesTab.setArguments(bundle);
                 return topHeroesTab;
             case 2:
                 AchievementsFragment achievementsTab = new AchievementsFragment();
+                achievementsTab.setArguments(bundle);
                 return achievementsTab;
             default:
                 return null;

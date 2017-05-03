@@ -23,7 +23,6 @@ import java.util.Map;
 
 public class StatsController extends AppCompatActivity implements TabLayout.OnTabSelectedListener{
 
-    DataFromActivityToFragment dataFromActivityToFragment;
     private TabLayout tabLayout;
     private ViewPager  viewPager;
     // Tab titles
@@ -43,7 +42,7 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
 
         Intent intent = getIntent();
         Map playerMap = (HashMap<String, Object>) intent.getSerializableExtra("player_map");
-        OWPlayer player = new OWPlayer(playerMap, (String) playerMap.get("battle_tag"));
+        OWPlayer player = new OWPlayer(playerMap, (String) playerMap.get("battle_tag"), (String)playerMap.get("region_selection"));
         Bundle bundle = new Bundle();
         bundle.putSerializable("player", player);
         intent.putExtras(bundle);
@@ -87,10 +86,6 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
 
-    }
-
-    public interface DataFromActivityToFragment {
-        void sendData(String data);
     }
 
 }

@@ -20,7 +20,7 @@ public class OWOverallStats {
 
     public OWOverallStats(Map stats) {
         this.losses = (Double)stats.get("losses");
-        this.compRank = (Double)stats.get("comp_rank");
+        this.compRank = (Double)stats.get("comprank");
         this.winRate = (Double)stats.get("win_rate");
         this.prestige = (Double)stats.get("prestige");
         this.avatar = (String)stats.get("avatar");
