@@ -54,6 +54,12 @@ public class PlayerStatsFragment extends Fragment {
         eliminationsView = (TextView)rootView.findViewById(R.id.eliminations);
         deathsView = (TextView)rootView.findViewById(R.id.deaths);
         kpdView = (TextView)rootView.findViewById((R.id.kpd));
+        finalBlowsView = (TextView)rootView.findViewById((R.id.final_blows));
+        healingView = (TextView)rootView.findViewById((R.id.healing));
+        objKillsView = (TextView)rootView.findViewById((R.id.obj_kills));
+        objTimeView = (TextView)rootView.findViewById((R.id.obj_time));
+        soloKillsView = (TextView)rootView.findViewById((R.id.solo_kills));
+        damageDoneView = (TextView)rootView.findViewById((R.id.damage_done));
 
         Bundle bundle = getArguments();
        final OWPlayer player = (OWPlayer) bundle.getSerializable("player");
@@ -72,9 +78,9 @@ public class PlayerStatsFragment extends Fragment {
         Double deaths = 0.0;
         Double kpd = 0.0;
         Double finalBlows = 0.0;
-        Double healing = 0.0;
+        Double healing = 0.0; // Healing Average, not correct value?
         Double objKills = 0.0;
-        Double objTime = 0.0;
+        Double objTime = 0.0; // Need to format into 24-Hour Time Format
         Double soloKills = 0.0;
         Double damageDone = 0.0;
 
@@ -140,6 +146,7 @@ public class PlayerStatsFragment extends Fragment {
         rankProgressBar.setProgress(rankProgressValue);
 
         // setting FEATURE stats
+        /* Eliminations Stat */
         Spannable value = new SpannableString(Double.toString(eliminations));
         Spannable label = new SpannableString("ELIMINATIONS");
         value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -147,6 +154,7 @@ public class PlayerStatsFragment extends Fragment {
         eliminationsView.setText(value);
         eliminationsView.append("\n"+label);
 
+        /* Death Stat */
         value = new SpannableString(Double.toString(deaths));
         label = new SpannableString("DEATHS");
         value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -154,12 +162,61 @@ public class PlayerStatsFragment extends Fragment {
         deathsView.setText(value);
         deathsView.append("\n"+label);
 
+        /* KPD Stat */
         value = new SpannableString(Double.toString(kpd));
         label = new SpannableString("KPD");
         value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         kpdView.setText(value);
         kpdView.append("\n"+label);
+
+        /* Final Blows Stat */
+        value = new SpannableString(Double.toString(finalBlows));
+        label = new SpannableString("FINAL BLOWS");
+        value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        finalBlowsView.setText(value);
+        finalBlowsView.append("\n"+label);
+
+        /* Need More Healing Stat */
+        value = new SpannableString(Double.toString(healing));
+        label = new SpannableString("HEALING");
+        value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        healingView.setText(value);
+        healingView.append("\n"+label);
+
+        /* Objective Kills Stat */
+        value = new SpannableString(Double.toString(objKills));
+        label = new SpannableString("OBJECTIVE KILLS");
+        value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        objKillsView.setText(value);
+        objKillsView.append("\n"+label);
+
+        /* Objective Time Stat */
+        value = new SpannableString(Double.toString(objTime));
+        label = new SpannableString("OBJECTIVE TIME");
+        value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        objTimeView.setText(value);
+        objTimeView.append("\n"+label);
+
+        /* Solo Kills Stat */
+        value = new SpannableString(Double.toString(soloKills));
+        label = new SpannableString("SOLO KILLS");
+        value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        soloKillsView.setText(value);
+        soloKillsView.append("\n"+label);
+
+        /* Damage Done Stat */
+        value = new SpannableString(Double.toString(damageDone));
+        label = new SpannableString("DAMAGE DONE");
+        value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        damageDoneView.setText(value);
+        damageDoneView.append("\n"+label);
 
 
         // for rank image icon
