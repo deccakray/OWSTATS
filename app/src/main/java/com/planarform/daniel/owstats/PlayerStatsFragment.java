@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -39,7 +40,7 @@ public class PlayerStatsFragment extends Fragment {
     TextView objTimeView;
     TextView soloKillsView;
     TextView damageDoneView;
-    Bitmap image;
+    ImageView rankIcon;
 
 
     @Override
@@ -49,7 +50,7 @@ public class PlayerStatsFragment extends Fragment {
         levelProgress = (TextView)rootView.findViewById(R.id.level_progress);
         CircleProgressBar levelProgressBar = (CircleProgressBar) rootView.findViewById(R.id.level_progressBar);
         CircleProgressBar rankProgressBar = (CircleProgressBar) rootView.findViewById(R.id.rank_progressBar);
-//        final ImageView rankImage = (ImageView)rootView.findViewById(R.id.rank_image);
+        rankIcon = (ImageView)rootView.findViewById(R.id.rank_icon);
 
         eliminationsView = (TextView)rootView.findViewById(R.id.eliminations);
         deathsView = (TextView)rootView.findViewById(R.id.deaths);
@@ -123,7 +124,37 @@ public class PlayerStatsFragment extends Fragment {
             soloKills = player.krStats.quickplay.average.soloKillsAverage;
             damageDone = player.krStats.quickplay.average.damageDoneAverage;
         }
-        //
+
+        // set rank icon from SR
+        Drawable bronze = getResources().getDrawable(R.drawable.rank_1);
+        Drawable silver = getResources().getDrawable(R.drawable.rank_2);
+        Drawable gold = getResources().getDrawable(R.drawable.rank_3);
+        Drawable platinum = getResources().getDrawable(R.drawable.rank_4);
+        Drawable diamond = getResources().getDrawable(R.drawable.rank_5);
+        Drawable master = getResources().getDrawable(R.drawable.rank_6);
+        Drawable grandmaster = getResources().getDrawable(R.drawable.rank_7);
+        if(rank <= 1499 && rank >= 1){
+            rankIcon.setImageDrawable(bronze);
+        }
+        else if (rank <= 1999 && rank >= 1500) {
+            rankIcon.setImageDrawable(silver);
+        }
+        else if (rank <= 2499 && rank >= 2000) {
+            rankIcon.setImageDrawable(gold);
+        }
+        else if (rank <= 2999 && rank >= 2500) {
+            rankIcon.setImageDrawable(platinum);
+        }
+        else if (rank <= 3499 && rank >= 3000) {
+            rankIcon.setImageDrawable(diamond);
+        }
+        else if (rank <= 3999 && rank >= 3500) {
+            rankIcon.setImageDrawable(master);
+        }
+        else if (rank >= 4000) {
+            rankIcon.setImageDrawable(grandmaster);
+        }
+        //set value for level progress
         Integer level_ = level.intValue() + prestige.intValue() * 100;
         levelProgress.setText(Integer.toString(level_));
 
@@ -160,6 +191,8 @@ public class PlayerStatsFragment extends Fragment {
         label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         kpdView.setText(value);
         kpdView.append("\n"+label);
+
+
 
 
         // for rank image icon
