@@ -9,9 +9,12 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
@@ -20,6 +23,7 @@ import com.google.gson.JsonParseException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,7 +33,7 @@ import java.util.Map;
  */
 // This class will ask for the user to enter any battletag and search the stats
 // the stats pertaining to that battletag
-public class SearchController extends Activity {
+public class SearchController extends Activity implements AdapterView.OnItemSelectedListener {
     static Context context;
     Button searchButton;
     EditText searchBar;
@@ -45,6 +49,30 @@ public class SearchController extends Activity {
         searchBar = (EditText)findViewById(R.id.search_bar);
         platformChooser = (Spinner)findViewById(R.id.platform_chooser);
 
+        // Spinner click listener
+        platformChooser.setOnItemSelectedListener(this);
+
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("US");
+        categories.add("EU");
+        categories.add("KR");
+
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        platformChooser.setAdapter(dataAdapter);
+
+        // I STILL NEED TO LINK SPINNER VALUES TO BUNDLE ...
+        String selection = platformChooser.getSelectedItem().toString();
+        final String regionSelection = this.getRegionSelection(selection);
+
+
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,25 +84,26 @@ public class SearchController extends Activity {
                     NetworkingManager networkManager = NetworkingManager.getInstance();
 
                     networkManager.sendGetRequest(url, new NetworkingListener<String, VolleyError>() {
-                            @Override
+                        @Override
                         public void onResponse(String response) {
-                                try {
+                            try {
 
-                                    Map playerMap = OWPlayer.setJSON(response);
-                                   playerMap.put("battle_tag", input);
+                                Map playerMap = OWPlayer.setJSON(response);
+                                playerMap.put("battle_tag", input);
+                                playerMap.put("region_selection", regionSelection);
 
-                                    HashMap<String, Object> hashy = new HashMap<String, Object>(playerMap);
+                                HashMap<String, Object> hashy = new HashMap<String, Object>(playerMap);
 
-                                    Intent intent = new Intent(SearchController.this, StatsController.class);
-                                    intent.putExtra("player_map", hashy);
-                                    startActivity(intent);
+                                Intent intent = new Intent(SearchController.this, StatsController.class);
+                                intent.putExtra("player_map", hashy);
+                                startActivity(intent);
 
 
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                    showAlertToUser(e.getMessage());
-                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                showAlertToUser(e.getMessage());
                             }
+                        }
                         @Override
                         public void onError(VolleyError error) {
                             error.printStackTrace();
@@ -88,6 +117,23 @@ public class SearchController extends Activity {
             }
         });
     }
+
+
+    public String getRegionSelection(String selection) {
+        String regionSelection = "";
+        if(selection.equals("US")) {
+            regionSelection = "usStats";
+        }
+        else if(selection.equals("EU")) {
+            regionSelection = "euStats";
+        }
+        else if (selection.equals("KR")){
+            regionSelection = "krStats";
+        }
+        return regionSelection;
+    }
+
+
     /**
      *
      * @param message alert displayed to the user
@@ -112,5 +158,18 @@ public class SearchController extends Activity {
     public static Context getContext() {
         return context;
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+        // Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }
+
 
 }
