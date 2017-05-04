@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="15dp"
     android:gravity="center"
-    android:background="@color/colorPrimaryDarkGrey">
+    android:background="@color/colorDarkGrey">
 
     <EditText
         android:gravity="center"

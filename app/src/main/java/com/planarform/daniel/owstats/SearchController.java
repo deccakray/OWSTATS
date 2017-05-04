@@ -26,6 +26,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.R.attr.bitmap;
+
 /**
  * Created by Daniel on 3/22/17.
  * This class will ask for the user to enter any battletag and search the stats
@@ -81,7 +83,7 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
                 if(OWPlayer.isValidBattleTag(input)) {
                     input = input.replace("#","-");
                     String url = "https://owapi.net/api/v3/u/" + input + "/blob";
-                    NetworkingManager networkManager = NetworkingManager.getInstance();
+                    final NetworkingManager networkManager = NetworkingManager.getInstance();
 
                     networkManager.sendGetRequest(url, new NetworkingListener<String, VolleyError>() {
                         @Override
@@ -110,9 +112,19 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
                             showAlertToUser("Error: " + error.getMessage());
                         }
                         @Override
-                        public void onImageDownloaded(Bitmap b) {}
+                        public void onImageDownloaded(Bitmap b) {
+
+                        }
+
+
+
+
+
 
                     });
+
+
+
                 }
             }
         });

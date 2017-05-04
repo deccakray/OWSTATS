@@ -3,14 +3,21 @@ package com.planarform.daniel.owstats;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.provider.ContactsContract;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.android.volley.VolleyError;
+
+import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -25,6 +32,10 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
 
     private TabLayout tabLayout;
     private ViewPager  viewPager;
+    private ImageView profileIcon;
+    private TextView playerNameView;
+    NetworkingManager networkManager;
+    String avatarURL;
     // Tab titles
     private String[] tabs = { "Player Stats", "Top Heroes", "Achievements" };
 
@@ -33,9 +44,12 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
         setContentView(R.layout.stats_layout);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
+        profileIcon = (ImageView)findViewById(R.id.profile_icon);
+
         //Adding toolbar to the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         //Initializing the tablayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -46,6 +60,14 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
         Bundle bundle = new Bundle();
         bundle.putSerializable("player", player);
         intent.putExtras(bundle);
+
+        avatarURL = player.usStats.quickplay.overall.avatar;
+        this.setImageIconToolBar(avatarURL);
+        playerNameView = (TextView)findViewById(R.id.player_name);
+        String battleTag= (String) playerMap.get("battle_tag");
+        String[] playerName = battleTag.split("-");
+        playerNameView.setText(playerName[0].toUpperCase());
+
         //Adding the tabs using addTab() method
         tabLayout.addTab(tabLayout.newTab().setText(tabs[0]));
         tabLayout.addTab(tabLayout.newTab().setText(tabs[1]));
@@ -86,6 +108,25 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
 
+    }
+
+    public void setImageIconToolBar(String URL) {
+        networkManager = NetworkingManager.getInstance();
+        networkManager.sendImageRequest(URL, new NetworkingListener<String, VolleyError>() {
+            @Override
+            public void onResponse(String response) {
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                error.printStackTrace();
+            }
+
+            @Override
+            public void onImageDownloaded(Bitmap bitmap) {
+                profileIcon.setImageBitmap(bitmap);
+            }
+        });
     }
 
 }
