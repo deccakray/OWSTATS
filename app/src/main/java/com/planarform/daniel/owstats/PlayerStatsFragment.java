@@ -229,13 +229,16 @@ public class PlayerStatsFragment extends Fragment {
 
         /* Objective Kills Stat */
         value = new SpannableString(Double.toString(objKills));
+
         label = new SpannableString("OBJ. KILLS");
+
         value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         objKillsView.setText(value);
         objKillsView.append("\n"+label);
 
         /* Objective Time Stat */
+
         // This minutes/seconds part is pure aids (and isn't correct yet)
         Double objTimeMinutes = objTime * 60;
         Double objTimeSeconds = objTimeMinutes%360;
@@ -250,6 +253,7 @@ public class PlayerStatsFragment extends Fragment {
         value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
+
         objTimeView.setText(value);
         objTimeView.append("\n"+label);
 
@@ -262,11 +266,13 @@ public class PlayerStatsFragment extends Fragment {
         soloKillsView.append("\n"+label);
 
         /* Damage Done Stat */
+
         // change damage into ###,### format
         int damageDone_ = damageDone.intValue();
         String damageDone_str = dformat.format(damageDone_);
         value = new SpannableString(damageDone_str);
         label = new SpannableString("DMG DONE");
+
         value.setSpan(new ForegroundColorSpan(Color.WHITE), 0, value.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         damageDoneView.setText(value);
