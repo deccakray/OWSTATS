@@ -3,22 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff8400" >
+    android:background="@color/colorDarkGrey" >
 
-    <TextView android:layout_width="fill_parent"
+    <TextView
+        android:layout_width="fill_parent"
         android:id="@+id/select"
         android:layout_height="wrap_content"
-        android:gravity="top"
         android:text="SELECT YOUR STAT:"
         android:textSize="20dp"
-        android:layout_centerInParent="true"/>
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:gravity="top|center"
+        android:layout_marginTop="10dp"/>
     <Spinner
         android:layout_below="@+id/select"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/hero_spinner">
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/hero_spinner"
+        android:layout_marginBottom="50dp"
+        android:popupBackground="@color/colorMiddleGrey"
+        android:background="@color/colorMiddleGrey"
+        android:layout_centerInParent="true"
+        >
 
     </Spinner>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hero_list"
+        android:layout_below="@id/hero_spinner"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+    </ListView>
 
 
 </RelativeLayout>
