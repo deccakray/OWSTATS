@@ -37,7 +37,7 @@ import static android.R.attr.bitmap;
 // the stats pertaining to that battletag
 public class SearchController extends Activity implements AdapterView.OnItemSelectedListener {
     static Context context;
-    Button searchButton;
+    Button searchButton, messengerButton;
     EditText searchBar;
     Spinner platformChooser;
     String input = "";
@@ -48,6 +48,7 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
 
         context = getApplicationContext();
         searchButton = (Button)findViewById(R.id.search_button);
+        messengerButton = (Button)findViewById(R.id.messenger_button);
         searchBar = (EditText)findViewById(R.id.search_bar);
         platformChooser = (Spinner)findViewById(R.id.platform_chooser);
 
@@ -127,6 +128,15 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
 
                 }
             }
+        });
+
+        messengerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SearchController.this, MessengerActivity.class);
+                startActivity(intent);
+            }
+
         });
     }
 
