@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Message"
-            android:id="@+id/input"
+            android:id="@+id/message"
             android:textColor="@color/white"
             />
     </android.support.design.widget.TextInputLayout>
