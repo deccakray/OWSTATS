@@ -61,22 +61,4 @@ public class AchievementsFragment extends Fragment {
 
         return rootView;
     }
-
-    public Bitmap downloadBitmap(String url) {
-        Bitmap bitmap = null;
-        InputStream in = null;
-
-        try {
-            in = new java.net.URL(url).openStream();
-            bitmap = BitmapFactory.decodeStream(in);
-        } catch (Exception e) {
-            Log.e("Error", e.getMessage());
-            e.printStackTrace();
-        }
-
-
-
-
-        return bitmap;
-    }
 }

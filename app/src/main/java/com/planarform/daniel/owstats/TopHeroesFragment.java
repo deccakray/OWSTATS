@@ -27,8 +27,6 @@ import java.util.List;
 
 import static com.planarform.daniel.owstats.SearchController.context;
 
-//FIX THIS SO IT TIES IN WITH ADDDING/UPDATING LISTVIEW ONITEMSELECTED
-// http://stackoverflow.com/questions/19833100/android-updating-list-view-on-spinner-selection
 public class TopHeroesFragment extends Fragment {
 
     Spinner selectStat;
@@ -36,7 +34,7 @@ public class TopHeroesFragment extends Fragment {
     ArrayList<Double> preheroValueList = new ArrayList<>();
     double[] preheroValue;
     ArrayList<String> heroValueList = new ArrayList<>();
-//    ArrayList<String> heroValue;
+
     String[] heroNames;
     ArrayList<String> heroNamesList = new ArrayList<>();
     int[] heroIcons;
@@ -56,7 +54,6 @@ public class TopHeroesFragment extends Fragment {
         TextView selectTextView = (TextView)rootView.findViewById(R.id.select);
         selectTextView.setTypeface(OWFONT);
 
-//        Double deaths = player.usStats.quickplay.game.kpd;
 
         // Grab hero Value of each hero if not null
         // doing us stats only ... for now

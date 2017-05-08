@@ -16,28 +16,25 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import static com.planarform.daniel.owstats.SearchController.context;
-
 /**
  * Created by Daniel on 5/7/17.
  */
 
 
 public class AchievementsAdapter extends BaseAdapter {
-    private ArrayList<OWAchievement> achievementObject;
+    private ArrayList<OWAchievement> achievementObjectList;
     private static LayoutInflater inflater=null;
     Context context;
 
-    public AchievementsAdapter(AchievementsFragment achievementsFragment, ArrayList<OWAchievement> achievementObject) {
-        this.achievementObject = achievementObject;
+    public AchievementsAdapter(AchievementsFragment achievementsFragment, ArrayList<OWAchievement> achievementObjectList) {
+        this.achievementObjectList = achievementObjectList;
         this.context = achievementsFragment.getActivity();
-       // inflater = ( LayoutInflater )context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
 
     @Override
     public int getCount() {
-        return achievementObject.size();
+        return achievementObjectList.size();
     }
 
     @Override
@@ -67,23 +64,19 @@ public class AchievementsAdapter extends BaseAdapter {
         AchievementsAdapter.Holder holder = new AchievementsAdapter.Holder();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
+        grid = new View(context);
+        grid = inflater.inflate(R.layout.achievement_item, null);
+//
+        holder.achievementNameView = (TextView) grid.findViewById(R.id.achievement_name);
+        holder.achievementIconView = (ImageView)grid.findViewById(R.id.achievement_icon);
+        holder.achievementNameView.setText(achievementObjectList.get(position).name);
 
 
-        if (convertView == null) {
-
-            grid = new View(context);
-            grid = inflater.inflate(R.layout.achievement_item, null);
-            holder.achievementNameView = (TextView) grid.findViewById(R.id.achievement_name);
-            holder.achievementIconView = (ImageView)grid.findViewById(R.id.achievement_icon);
-            holder.achievementNameView.setText(achievementObject.get(position).name);
-            holder.achievementNameView.setTypeface(OWFONT);
-            Picasso.with(context).load(achievementObject.get(position).url).into(holder.achievementIconView);
-            if(achievementObject.get(position).isFinished!=true){
-                holder.achievementIconView.setAlpha((float) 0.1);
-                holder.achievementNameView.setAlpha((float)0.1);
-            }
-        } else {
-            grid = convertView;
+        holder.achievementNameView.setTypeface(OWFONT);
+        Picasso.with(context).load(achievementObjectList.get(position).url).into(holder.achievementIconView);
+        if(achievementObjectList.get(position).isFinished!=true){
+            holder.achievementIconView.setAlpha((float) 0.1);
+            holder.achievementNameView.setAlpha((float)0.1);
         }
 
         return grid;

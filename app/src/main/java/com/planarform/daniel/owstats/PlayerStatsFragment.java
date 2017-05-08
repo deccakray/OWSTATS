@@ -318,44 +318,6 @@ public class PlayerStatsFragment extends Fragment {
         label.setSpan(new ForegroundColorSpan(Color.BLACK), 0, label.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         damageDoneView.setText(value);
         damageDoneView.append("\n"+label);
-
-        // I cant get the fucking scroll to work with this shitty layout for fucks sake
-
-//
-//
-//
-// String[] testArray = {"nig, nia, nasdf, lkj, klsdfjds"};
-//        ListView gameListView = (ListView)rootView.findViewById(R.id.game_listView);
-//        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_listview, testArray);
-//        gameListView.setAdapter(adapter);
-
-        // for rank image icon
-//        Thread thread = new Thread(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                try  {
-//
-//                    String rankImageURL = player.usStats.competitive.overall.rankImage;
-//                    try {
-//                        URL url = new URL(rankImageURL);
-//                        image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-//                    } catch(IOException e) {
-//                        System.out.println(e);
-//                    }
-//                    rankImage.setImageBitmap(image);
-//
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//
-//        thread.start();
-
-
-
-
         return rootView;
     }
 }
