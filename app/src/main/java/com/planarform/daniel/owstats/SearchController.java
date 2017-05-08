@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -27,6 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 import static android.R.attr.bitmap;
+import static android.R.attr.title;
 
 /**
  * Created by Daniel on 3/22/17.
@@ -45,12 +48,18 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.search_layout);
-
         context = getApplicationContext();
+        OWPlayerManager.getInstance().setContext(context);
         searchButton = (Button)findViewById(R.id.search_button);
         messengerButton = (Button)findViewById(R.id.messenger_button);
         searchBar = (EditText)findViewById(R.id.search_bar);
         platformChooser = (Spinner)findViewById(R.id.platform_chooser);
+        Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
+        TextView titleView = (TextView)findViewById(R.id.main_title_view);
+
+
+
+        titleView.setTypeface(OWFONT);
 
         // Spinner click listener
         platformChooser.setOnItemSelectedListener(this);
@@ -126,6 +135,9 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
 
 
 
+                }
+                else {
+                    showAlertToUser("BattleTag not found, try again");//Prompts user that "BattleTag not found, try again"
                 }
             }
         });

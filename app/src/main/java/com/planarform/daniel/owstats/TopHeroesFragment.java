@@ -3,37 +3,59 @@ package com.planarform.daniel.owstats;
 /**
  * Created by Daniel on 5/1/17.
  */
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.HttpAuthHandler;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+
+import static com.planarform.daniel.owstats.SearchController.context;
+
 //FIX THIS SO IT TIES IN WITH ADDDING/UPDATING LISTVIEW ONITEMSELECTED
 // http://stackoverflow.com/questions/19833100/android-updating-list-view-on-spinner-selection
 public class TopHeroesFragment extends Fragment {
 
     Spinner selectStat;
     ListView heroList;
-    double [] preheroValue;
-    String[] heroValue;
+    ArrayList<Double> preheroValueList = new ArrayList<>();
+    double[] preheroValue;
+    ArrayList<String> heroValueList = new ArrayList<>();
 //    ArrayList<String> heroValue;
     String[] heroNames;
+    ArrayList<String> heroNamesList = new ArrayList<>();
     int[] heroIcons;
+    ArrayList<Integer> maxValueList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_top_heroes, container, false);
+        Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
+
         // Get data from OWPLAYER
         Bundle bundle = getArguments();
         OWPlayer player = (OWPlayer) bundle.getSerializable("player");
+        HashMap<String, Integer> heroNametoIconMap = new HashMap<>();
+        HashMap<String, String> heroValuetoNameMap = new HashMap<>();
+        HashMap<String, Object> heroNametoValueMap = new HashMap<>();
+        TextView selectTextView = (TextView)rootView.findViewById(R.id.select);
+        selectTextView.setTypeface(OWFONT);
+
 //        Double deaths = player.usStats.quickplay.game.kpd;
 
         // Grab hero Value of each hero if not null
@@ -93,48 +115,81 @@ public class TopHeroesFragment extends Fragment {
             Log.d("no stats for that hero", "There was a null pointer exception");
         }
 
+        // Grab hero name
+        heroNames = new String[]{"ANA", "BASTION", "DVA","GENJI", "HANZO", "JUNKRAT", "LUCIO", "MCCREE", "MEI", "MERCY", "ORISA", "PHARAH", "REAPER", "REINHARDT",
+                "ROADHHOG", "SOLDIER76", "SOMBRA", "SYMMETRA", "TORBJORN", "TRACER", "WIDOWMAKER", "WINSTON", "ZARYA", "ZENYATTA" };
 
         // Grab raw double hero value
         preheroValue = new double[]{anaTime,bastionTime, dvaTime,  genjiTime,  hanzoTime,junkratTime, lucioTime, mccreeTime
                 ,meiTime , mercyTime, orisaTime, pharahTime, reaperTime, reinhardtTime, roadhogTime,  soldier76Time, sombraTime,
                 symmetraTime, torbjornTime, tracerTime, widowmakerTime, winstonTime, zaryaTime, zenyattaTime };
 
-//        heroValue = new ArrayList<>();
-        heroValue = new String[24];
+        // Grab hero icon
+        heroIcons = new int [] {R.drawable.ana, R.drawable.bastion, R.drawable.dva, R.drawable.genji, R.drawable.hanzo, R.drawable.junkrat, R.drawable.lucio, R.drawable.mccree,
+                R.drawable.mei, R.drawable.mercy, R.drawable.orisa, R.drawable.pharah, R.drawable.reaper, R.drawable.reinhardt, R.drawable.roadhog, R.drawable.soldier_76, R.drawable.sombra, R.drawable.symmetra, R.drawable.torbjorn
+                , R.drawable.tracer, R.drawable.widowmaker, R.drawable.winston, R.drawable.zarya, R.drawable.zenyatta};
+
+
+        // fill hero name list
+        for(int i = 0; i < heroNames.length; i ++ ) {
+            heroNamesList.add(heroNames[i]);
+        }
+        // Fill pre hero value list (RAW VALUES)
+        for(int i = 0; i < preheroValue.length; i ++ ) {
+            preheroValueList.add(preheroValue[i]);
+        }
+
+
+        // Fill heroNameValue Maps so i can have bi directional lookup
+        for(int i = 0; i < heroNames.length; i ++) {
+            heroNametoValueMap.put(heroNamesList.get(i), preheroValueList.get(i));
+        }
+
+
+        // sort and reverse the lists to make it (high to low)
+//        Collections.sort(preheroValueList);
+//        Collections.reverse(preheroValueList);
+
         // Aids for-loop to determine Hours, Minutes, Seconds (Rounds off remainders)
-        for(int i = 0; i < preheroValue.length; i++) {
+        for(int i = 0; i < preheroValueList.size(); i++) {
             // to change to hours
-            if (preheroValue[i] >= 1) {
-                int newHeroValue = (int)preheroValue[i];
+            if (preheroValueList.get(i) >= 1) {
+                int newHeroValue = preheroValueList.get(i).intValue();
                 if(newHeroValue == 1) {
-                    heroValue[i] = Integer.toString(newHeroValue)+" hours";
+                    heroValueList.add(Integer.toString(newHeroValue)+" hour");
+                    maxValueList.add(newHeroValue);
                 }
                 else {
-                    heroValue[i] = Integer.toString(newHeroValue)+" hours";
+                    heroValueList.add(Integer.toString(newHeroValue)+" hours");
+                    maxValueList.add(newHeroValue);
                 }
             }
             // to change to minutes with seconds
-            else if (preheroValue[i]< 1) {
-                preheroValue[i] = preheroValue[i] *60;
+            else if (preheroValueList.get(i)< 1) {
+                preheroValueList.set(i, preheroValueList.get(i)*60 );
                 // if the value has no remainder when converted to minutes or it does
-                if ((preheroValue[i]) >= 1) {
+                if ((preheroValueList.get(i)) >= 1) {
 
-                    int newHeroValue = (int)preheroValue[i];
+                    int newHeroValue = preheroValueList.get(i).intValue();
                     if (newHeroValue == 1) {
-                        heroValue[i] = Integer.toString(newHeroValue)+ " minute";
+                        heroValueList.add(Integer.toString(newHeroValue)+ " minute");
+                        maxValueList.add(newHeroValue);
                     }
                     else{
-                        heroValue[i] = Integer.toString(newHeroValue)+ " minutes";
+                        heroValueList.add(Integer.toString(newHeroValue)+ " minutes");
+                        maxValueList.add(newHeroValue);
                     }
                 }
-                else if((preheroValue[i] < 1)) {
-                    preheroValue[i] = preheroValue[i] * 60;
-                    int newHeroValue = (int)preheroValue[i];
+                else if((preheroValueList.get(i) < 1)) {
+                    preheroValueList.set(i, preheroValueList.get(i)*60 );
+                    int newHeroValue = preheroValueList.get(i).intValue();
                     if(newHeroValue == 1) {
-                        heroValue[i] = Integer.toString(newHeroValue) + " second";
+                        heroValueList.add(Integer.toString(newHeroValue) + " second");
+                        maxValueList.add(newHeroValue);
                     }
                     else{
-                        heroValue[i] = Integer.toString(newHeroValue) + " seconds";
+                        heroValueList.add(Integer.toString(newHeroValue) + " seconds");
+                        maxValueList.add(newHeroValue);
                     }
 
                 }
@@ -143,14 +198,64 @@ public class TopHeroesFragment extends Fragment {
 
 
 
-        // Grab hero name
-        heroNames = new String[]{"ANA", "BASTION", "DVA","GENJI", "HANZO", "JUNKRAT", "LUCIO", "MCCREE", "MEI", "MERCY", "ORISA", "PHARAH", "REAPER", "REINHARDT",
-                "ROADHHOG", "SOLDIER76", "SOMBRA", "SYMMETRA", "TORBJORN", "TRACER", "WIDOWMAKER", "WINSTON", "ZARYA", "ZENYATTA" };
 
-        // Grab hero icon
-        heroIcons = new int [] {R.drawable.ana, R.drawable.bastion, R.drawable.dva, R.drawable.genji, R.drawable.hanzo, R.drawable.junkrat, R.drawable.lucio, R.drawable.mccree,
-                R.drawable.mei, R.drawable.mercy, R.drawable.orisa, R.drawable.pharah, R.drawable.reaper, R.drawable.reinhardt, R.drawable.roadhog, R.drawable.soldier_76, R.drawable.sombra, R.drawable.symmetra, R.drawable.torbjorn
-        , R.drawable.tracer, R.drawable.widowmaker, R.drawable.winston, R.drawable.zarya, R.drawable.zenyatta};
+
+
+//        HashMap<Double, String> preheroValuetoPost = new HashMap<>();
+
+        // to retrieve value from map
+        for(int i = 0; i < heroValueList.size(); i++) {
+           heroNametoValueMap.put(heroNamesList.get(i), heroValueList.get(i));
+        }
+        // to retrieve name from map
+        for(int i = 0; i < heroValueList.size(); i++) {
+            heroValuetoNameMap.put(heroValueList.get(i), heroNamesList.get(i));
+        }
+        // to retrive icon from map
+        for(int i = 0; i< heroNamesList.size(); i ++) {
+            heroNametoIconMap.put(heroNamesList.get(i), heroIcons[i]);
+        }
+
+        // Getting max
+//        for(int i = 0; i < heroValueList.size(); i++) {
+//            String[] parts = heroValueList.get(i).split(" ");
+//            // get the value on left side of split parts[]
+//            int value = Integer.parseInt(parts[i]);
+//            String measurement = (parts[i+1]);
+//            // Always stick the first value inside the maxValueList
+//            if(maxValueList == null){
+//                maxValueList.add(value);
+//            }
+//            if(measurement.equals("hours")) {
+//
+//                maxValueList.add(parts[i])
+//            }
+//            else if(measurement.equals("minutes")) {
+//
+//            }
+//            else if(measurement.equals("seconds")) {
+//
+//            }
+//
+//        }
+//        do {
+//
+//        }while (heroValueList!=null);
+
+
+        // Order heroValueList
+
+
+        // fill hero name map
+//        for(int i = 0; i < heroValueList.size(); i++) {
+//
+//            heroNametoValueMapFinal.put(heroNamesList.get(i), preheroValuetoPost.get(i) );
+//        }
+
+        // is this hero the highest value?
+        // its value is on top (first in list), second highest is next and so forth
+        //
+
 
         // Spinner element
         selectStat = (Spinner) rootView.findViewById(R.id.hero_spinner);
@@ -170,7 +275,7 @@ public class TopHeroesFragment extends Fragment {
         //List View element
         heroList = (ListView)rootView.findViewById(R.id.hero_list);
         // ListView custombase adapter
-        TopHeroListViewAdapter listViewAdapter = new TopHeroListViewAdapter(this, heroNames, heroIcons, heroValue);
+        TopHeroListViewAdapter listViewAdapter = new TopHeroListViewAdapter(this, heroValueList, heroIcons, heroNamesList, maxValueList);
         heroList.setAdapter(listViewAdapter);
 
 

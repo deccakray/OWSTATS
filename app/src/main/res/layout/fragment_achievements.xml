@@ -1,16 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#17df0d">
+    android:layout_width="match_parent"
+    android:fillViewport="true">
 
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Design Movies Screen"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"/>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorDarkGrey">
 
 
-</RelativeLayout>
+        <GridView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/achievement_grid_view"
+            android:gravity="center"
+            android:columnWidth="100dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="30dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="spacingWidthUniform"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="0dp">
+        </GridView>
+    <!--<GridLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:columnCount="3"-->
+        <!--android:rowCount="5"-->
+        <!--android:id="@+id/achievement_grid_layout"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true">-->
+
+
+
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/power_of_attraction"-->
+            <!--android:layout_marginRight="50dp"-->
+            <!--android:layout_marginBottom="50dp"-->
+            <!--android:layout_marginTop="30dp">-->
+
+        <!--</ImageView>-->
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/whoa_there"-->
+            <!--android:layout_marginRight="50dp"-->
+            <!--android:layout_marginTop="30dp"-->
+
+<!--/>-->
+
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/giving_you_the_hook"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/waste_not_want_not"-->
+            <!--android:layout_marginBottom="50dp"-->
+
+            <!--/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/total_recall"/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/its_high_noon"/>-->
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/rocket_man"-->
+            <!--android:layout_marginBottom="50dp"-->
+            <!--/>-->
+
+
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/slice_and_dice"/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/anger_management"/>-->
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/nap_time"-->
+            <!--android:layout_marginBottom="50dp"-->
+            <!--/>-->
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/four_they_were"/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/smooth_as_silk"/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/armor_up"-->
+            <!--android:layout_marginBottom="50dp"-->
+            <!--/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/cleanup_duty"/>-->
+
+        <!--<ImageView android:layout_width = "wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/simple_geometry"/>-->
+
+    <!--</GridLayout>-->
+
+
+    </RelativeLayout>
+
+</ScrollView>

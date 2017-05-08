@@ -67,8 +67,15 @@ public class OWPlayer implements Serializable{
     }
 
     public static boolean isValidBattleTag(String battleTag) {
-        return true;
-    }
+        // validate battle tag
+        if(battleTag.length() < 8 || battleTag.length() > 16) {
+            return false;
+        }
+        if(!battleTag.contains("#") && !battleTag.contains("-")) {
+            return false;
+        }
+
+        return true;    }
 
     public static Map setJSON(String response) throws Exception{
             Map rootObject;

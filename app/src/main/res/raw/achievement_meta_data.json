@@ -1,0 +1,377 @@
+{
+    "waste_not_want_not": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000164.png",
+        "name": "Waste Not, Want Not",
+        "description": "Get 3 solo kills with a single clip of Reaper's shotguns in Quick or Competitive Play."
+    },
+    "total_recall": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000016B.png",
+        "name": "Total Recall",
+        "description": "Recover 400 health using Tracer's Recall without dying in Quick or Competitive Play."
+    },
+    "giving_you_the_hook": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000017E.png",
+        "name": "Giving You the Hook",
+        "description": "Interrupt an enemy ultimate ability with Roadhog's Hook in Quick or Competitive Play."
+    },
+    "whoa_there": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000165.png",
+        "name": "Whoa There!",
+        "description": "Interrupt an enemy ultimate ability with McCree's Flashbang in Quick or Competitive Play."
+    },
+    "the_power_of_attraction": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000183.png",
+        "name": "The Power of Attraction",
+        "description": "Capture 5 enemies in a single use of Zarya's Graviton Surge in Quick or Competitive Play."
+    },
+    "simple_geometry": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000016F.png",
+        "name": "Simple Geometry",
+        "description": "Get 2 killing blows with a single use of Hanzo's Scatter Arrow in Quick or Competitive Play."
+    },
+    "armor_up": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000177.png",
+        "name": "Armor Up!",
+        "description": "Have one of Torbj\u00f6rn's Armor Packs on 5 allies at the same time in Quick or Competitive Play."
+    },
+    "smooth_as_silk": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000179.png",
+        "name": "Smooth as Silk",
+        "description": "Kill an enemy with a scoped headshot while airborne as Widowmaker in Quick or Competitive Play."
+    },
+    "cleanup_duty": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001B0.png",
+        "name": "Cleanup Duty",
+        "description": "Recover a flag in a game of Capture the Rooster."
+    },
+    "its_high_noon": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000166.png",
+        "name": "It's High Noon",
+        "description": "Get 4 killing blows with a single use of McCree's Deadeye in Quick or Competitive Play."
+    },
+    "four_they_were": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000199.png",
+        "name": "Four They Were",
+        "description": "Win Junkenstein's Revenge using each of the 4 heroes."
+    },
+    "naptime": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000195.png",
+        "name": "Naptime",
+        "description": "Interrupt an enemy ultimate ability with Ana's Sleep Dart in Quick or Competitive Play."
+    },
+    "cant_touch_this": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000018F.png",
+        "name": "Can't Touch This",
+        "description": "Prevent the attacking team from touching the payload for 1 minute in Quick or Competitive Play."
+    },
+    "survival_expert": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000015F.png",
+        "name": "Survival Expert",
+        "description": "Use health packs to heal 900 health in a single life in Quick or Competitive Play."
+    },
+    "the_iris_embraces_you": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000018B.png",
+        "name": "The Iris Embraces You",
+        "description": "Restore 1500 health with a single use of Zenyatta's Transcendence in Quick or Competitive Play."
+    },
+    "double_cap": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000018D.png",
+        "name": "Double Cap",
+        "description": "Capture both objectives on a Capture map without dying in Quick or Competitive Play."
+    },
+    "game_over": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000017B.png",
+        "name": "Game Over",
+        "description": "Kill 4 enemies with a single use of D.va's Self Destruct in Quick or Competitive Play."
+    },
+    "whap": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001AD.png",
+        "name": "Whap!",
+        "description": "Kill an enemy with a snowball from 25 meters away in Mei's Snowball Offensive."
+    },
+    "death_from_above": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000167.png",
+        "name": "Death From Above",
+        "description": "Kill 4 enemies in a row without touching the ground as Pharah in Quick or Competitive Play."
+    },
+    "lockdown": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000018C.png",
+        "name": "Lockdown",
+        "description": "Win a Capture map on defense without losing the first objective in Quick or Competitive Play."
+    },
+    "undying": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000015D.png",
+        "name": "Undying",
+        "description": "Get a 20 player kill streak in Quick or Competitive Play."
+    },
+    "ambush": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001AE.png",
+        "name": "Ambush!",
+        "description": "Kill 3 enemies while they are picking up snow in a game of Mei's Snowball Offensive."
+    },
+    "charge": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000016E.png",
+        "name": "Charge!",
+        "description": "Kill 4 enemies with a single use of Bastion's Configuration: Tank in Quick or Competitive Play."
+    },
+    "raid_wipe": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000175.png",
+        "name": "Raid Wipe",
+        "description": "Kill 4 enemies during a single use of Torbj\u00f6rn's Molten Core in Quick or Competitive Play."
+    },
+    "slice_and_dice": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000015B.png",
+        "name": "Slice and Dice",
+        "description": "Kill 4 enemies with a single use of Genji's Dragonblade in Quick or Competitive Play."
+    },
+    "snowed_in": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001AB.png",
+        "name": "Snowed In",
+        "description": "Win Mei's Snowball Offensive without losing a round."
+    },
+    "level_25": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000158.png",
+        "name": "Level 25",
+        "description": "Reach level 25."
+    },
+    "decked_out": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000162.png",
+        "name": "Decked Out",
+        "description": "Collect 50 unlocks for a single hero."
+    },
+    "special_delivery": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000016C.png",
+        "name": "Special Delivery",
+        "description": "Stick 4 of Tracer's Pulse Bombs onto enemies in a single Quick or Competitive Play game."
+    },
+    "ice_blocked": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000173.png",
+        "name": "Ice Blocked",
+        "description": "Block 1200 damage with a single use of Mei's Ice Wall in Quick or Competitive Play."
+    },
+    "overclocked": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001B2.png",
+        "name": "Overclocked",
+        "description": "Amplify 900 damage with a single use of Orisa's Supercharger in Quick or Competitive Play."
+    },
+    "mine_sweeper": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000180.png",
+        "name": "Mine Sweeper",
+        "description": "Destroy 10 turrets or traps using Winston's Tesla Cannon without dying in Quick or Competitive Play."
+    },
+    "roadkill": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000172.png",
+        "name": "Roadkill",
+        "description": "Kill 4 enemies with a single use of Junkrat's RIP-Tire in Quick or Competitive Play."
+    },
+    "anger_management": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000181.png",
+        "name": "Anger Management",
+        "description": "Damage 6 enemies during a single use of Winston's Primal Rage in Quick or Competitive Play."
+    },
+    "centenary": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000156.png",
+        "name": "Centenary",
+        "description": "Win 100 games in Quick or Competitive Play."
+    },
+    "storm_earth_and_fire": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000017D.png",
+        "name": "Storm, Earth and Fire",
+        "description": "Land Reinhardt's Fire Strike and Charge after an Earthshatter stun in Quick or Competitive Play."
+    },
+    "the_car_wash": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000188.png",
+        "name": "The Car Wash",
+        "description": "Hit an enemy with 6 beams simultaneously as Symmetra in Quick or Competitive Play."
+    },
+    "rapid_discord": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000018A.png",
+        "name": "Rapid Discord",
+        "description": "Get 4 kills or assists with Zenyatta's Orb of Discord within 6 seconds in Quick or Competitive Play."
+    },
+    "the_friend_zone": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000192.png",
+        "name": "The Friend Zone",
+        "description": "Play a Quick or Competitive Play game in a group with a friend."
+    },
+    "supersonic": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000185.png",
+        "name": "Supersonic",
+        "description": "Block 1000 damage with a single use of L\u00facio's Sound Barrier in Quick or Competitive Play."
+    },
+    "escort_duty": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000018E.png",
+        "name": "Escort Duty",
+        "description": "Push a payload 100 meters without leaving it in Quick or Competitive Play."
+    },
+    "their_own_worst_enemy": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000163.png",
+        "name": "Their Own Worst Enemy",
+        "description": "Kill 2 enemies with a single use of Genji's Deflection in Quick or Competitive Play."
+    },
+    "not_a_scratch": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000198.png",
+        "name": "Not a Scratch",
+        "description": "Win Junkenstein's Revenge on medium difficulty with no damage to the door."
+    },
+    "hack_the_planet": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001A9.png",
+        "name": "Hack the Planet",
+        "description": "Hack 15 enemies without dying as Sombra in Quick or Competitive Play."
+    },
+    "group_health_plan": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000186.png",
+        "name": "Group Health Plan",
+        "description": "Restore 200 health for 5 players without dying as Mercy in Quick or Competitive Play."
+    },
+    "survived_the_night": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000197.png",
+        "name": "Survived the Night",
+        "description": "Win Junkenstein's Revenge on medium difficulty."
+    },
+    "the_floor_is_lava": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000184.png",
+        "name": "The Floor Is Lava",
+        "description": "Get 3 killing blows while wall riding as L\u00facio without dying in Quick or Competitive Play."
+    },
+    "blackjack": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000161.png",
+        "name": "Blackjack",
+        "description": "Earn 21 postgame cards in Quick or Competitive Play."
+    },
+    "shot_down": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000017A.png",
+        "name": "Shot Down",
+        "description": "Prevent 1500 damage with a single use of D.va's Defense Matrix in Quick or Competitive Play."
+    },
+    "the_dragon_is_sated": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000170.png",
+        "name": "The Dragon Is Sated",
+        "description": "Kill 4 enemies with one of Hanzo's Spirit Dragons in Quick or Competitive Play."
+    },
+    "halt_state": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001B1.png",
+        "name": "Halt State",
+        "description": "Pull enemies into 1000 damage with a single use of Orisa's Halt! in Quick or Competitive Play."
+    },
+    "decorated": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000160.png",
+        "name": "Decorated",
+        "description": "Earn 50 postgame medals in Quick or Competitive Play."
+    },
+    "enabler": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000196.png",
+        "name": "Enabler",
+        "description": "Get 4 kills or assists with a single use of Ana's Nano Boost in Quick or Competitive Play."
+    },
+    "flagbearer": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001AF.png",
+        "name": "Flagbearer",
+        "description": "Win Capture the Rooster with a score of 3 to 0."
+    },
+    "target_rich_environment": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000016A.png",
+        "name": "Target Rich Environment",
+        "description": "Kill 4 enemies with a single use of Soldier: 76's Tactical Visor in Quick or Competitive Play."
+    },
+    "level_50": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000159.png",
+        "name": "Level 50",
+        "description": "Reach level 50."
+    },
+    "huge_rez": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000187.png",
+        "name": "Huge Rez",
+        "description": "Resurrect 4 players at once with Mercy in Quick or Competitive Play."
+    },
+    "cool_as_ice": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001AC.png",
+        "name": "Cool As Ice",
+        "description": "Kill 4 enemies without missing in Mei's Snowball Offensive."
+    },
+    "the_path_is_closed": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000015E.png",
+        "name": "The Path Is Closed",
+        "description": "Destroy 3 of Symmetra's Teleporters in a single Quick or Competitive Play game."
+    },
+    "mine_like_a_steel_trap": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000171.png",
+        "name": "Mine Like a Steel Trap",
+        "description": "Knock an enemy into your Steel Trap using Junkrat's Concussion Mine in Quick or Competitive Play."
+    },
+    "triple_threat": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000016D.png",
+        "name": "Triple Threat",
+        "description": "Kill 2 enemies in each of Bastion's configurations without dying in Quick or Competitive Play."
+    },
+    "huge_success": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000189.png",
+        "name": "Huge Success",
+        "description": "Teleport 20 players in a single Quick or Competitive Play game as Symmetra."
+    },
+    "held_the_door": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000019C.png",
+        "name": "Held The Door",
+        "description": "Win Junkenstein's Revenge on hard difficulty."
+    },
+    "die_die_die_die": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000002.png",
+        "name": "Die Die Die... Die",
+        "description": "Kill 4 enemies with a single use of Reaper's Death Blossom in Quick or Competitive Play."
+    },
+    "cold_snap": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000174.png",
+        "name": "Cold Snap",
+        "description": "Freeze 4 enemies at once with Mei in Quick or Competitive Play."
+    },
+    "shutout": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000190.png",
+        "name": "Shutout",
+        "description": "Win a Control map without the enemy capturing an objective in Quick or Competitive Play."
+    },
+    "level_10": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000157.png",
+        "name": "Level 10",
+        "description": "Reach level 10."
+    },
+    "rocket_man": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000169.png",
+        "name": "Rocket Man",
+        "description": "Get 2 killing blows with a single use of Soldier: 76's Helix Rockets in Quick or Competitive Play."
+    },
+    "i_am_your_shield": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000017C.png",
+        "name": "I Am Your Shield",
+        "description": "Block 8000 damage with Reinhardt's Barrier Field without dying in Quick or Competitive Play."
+    },
+    "did_that_sting": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000178.png",
+        "name": "Did That Sting?",
+        "description": "Kill 4 enemies using Widowmaker's Venom Mine during a single Quick or Competitive Play game."
+    },
+    "clearing_the_area": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000168.png",
+        "name": "Clearing the Area",
+        "description": "Knock an enemy to their death using Pharah's Concussive Blast in Quick or Competitive Play."
+    },
+    "power_overwhelming": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000182.png",
+        "name": "Power Overwhelming",
+        "description": "Keep Zarya's particle cannon above 70 power for 60 seconds in Quick or Competitive Play."
+    },
+    "world_traveler": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E60000000000191.png",
+        "name": "World Traveler",
+        "description": "Win a Quick or Competitive Play game on 12 different maps."
+    },
+    "hog_wild": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E6000000000017F.png",
+        "name": "Hog Wild",
+        "description": "Knock 2 enemies to their deaths with one use of Roadhog's Whole Hog in Quick or Competitive Play."
+    },
+    "power_outage": {
+        "url": "https://blzgdapipro-a.akamaihd.net/game/achievements/0x0E600000000001AA.png",
+        "name": "Power Outage",
+        "description": "Hack 6 enemies at once as Sombra in Quick or Competitive Play."
+    }
+}

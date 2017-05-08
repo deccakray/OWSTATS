@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -35,6 +37,8 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.planarform.daniel.owstats.SearchController.context;
+
 public class PlayerStatsFragment extends Fragment {
     TextView rankProgress;
     TextView levelProgress;
@@ -53,12 +57,17 @@ public class PlayerStatsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_player_stats, container, false);
+        Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
         rankProgress = (TextView)rootView.findViewById(R.id.rank_progress);
         levelProgress = (TextView)rootView.findViewById(R.id.level_progress);
         CircleProgressBar levelProgressBar = (CircleProgressBar) rootView.findViewById(R.id.level_progressBar);
         CircleProgressBar rankProgressBar = (CircleProgressBar) rootView.findViewById(R.id.rank_progressBar);
         rankIcon = (ImageView)rootView.findViewById(R.id.rank_icon);
 
+        TextView featureStatsTitleView = (TextView)rootView.findViewById(R.id.featured_stats_avg);
+        TextView careerStatsTitleView = (TextView)rootView.findViewById(R.id.career_stats_title);
+        TextView rankView = (TextView)rootView.findViewById(R.id.rank);
+        TextView levelView = (TextView)rootView.findViewById(R.id.level);
         eliminationsView = (TextView)rootView.findViewById(R.id.eliminations);
         deathsView = (TextView)rootView.findViewById(R.id.deaths);
         kpdView = (TextView)rootView.findViewById((R.id.kpd));
@@ -68,6 +77,21 @@ public class PlayerStatsFragment extends Fragment {
         objTimeView = (TextView)rootView.findViewById((R.id.obj_time));
         soloKillsView = (TextView)rootView.findViewById((R.id.solo_kills));
         damageDoneView = (TextView)rootView.findViewById((R.id.damage_done));
+
+        eliminationsView.setTypeface(OWFONT);
+        deathsView.setTypeface(OWFONT);
+        kpdView.setTypeface(OWFONT);
+        finalBlowsView.setTypeface(OWFONT);
+        healingView.setTypeface(OWFONT);
+        objKillsView.setTypeface(OWFONT);
+        objTimeView.setTypeface(OWFONT);
+        damageDoneView.setTypeface(OWFONT);
+        soloKillsView.setTypeface(OWFONT);
+        rankView.setTypeface(OWFONT);
+        levelView.setTypeface(OWFONT);
+        featureStatsTitleView.setTypeface(OWFONT);
+        careerStatsTitleView.setTypeface(OWFONT);
+
 
         Bundle bundle = getArguments();
         final OWPlayer player = (OWPlayer) bundle.getSerializable("player");

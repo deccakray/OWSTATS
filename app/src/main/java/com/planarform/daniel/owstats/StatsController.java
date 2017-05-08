@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.ContactsContract;
@@ -12,6 +13,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +25,8 @@ import org.w3c.dom.Text;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.planarform.daniel.owstats.SearchController.context;
 
 /**
  * Created by Daniel on 3/22/17.
@@ -36,19 +41,31 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
     private TextView playerNameView;
     NetworkingManager networkManager;
     String avatarURL;
+    Button backButton;
     // Tab titles
     private String[] tabs = { "Player Stats", "Top Heroes", "Achievements" };
 
     protected void onCreate(Bundle savedInstanceStates) {
         super.onCreate(savedInstanceStates);
         setContentView(R.layout.stats_layout);
+        Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         profileIcon = (ImageView)findViewById(R.id.profile_icon);
+        backButton = (Button)findViewById(R.id.back_button);
+        backButton.setBackgroundResource(R.drawable.back_3x);
 
         //Adding toolbar to the activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TextView player_name = (TextView)findViewById(R.id.player_name);
+        player_name.setTypeface(OWFONT);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         //Initializing the tablayout
@@ -93,7 +110,11 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
 //        Double deaths = player.usStats.quickplay.game.turretsDestroyed;
 //        test.setText(Double.toString(deaths));
     }
-
+    @Override
+    public void onBackPressed() {
+        // do something on back.
+        return;
+    }
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
