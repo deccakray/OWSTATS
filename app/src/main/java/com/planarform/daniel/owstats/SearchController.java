@@ -145,8 +145,16 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
         messengerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SearchController.this, MessengerActivity.class);
-                startActivity(intent);
+                input = searchBar.getText().toString();
+                if(OWPlayer.isValidBattleTag(input)){
+                    Intent intent = new Intent(SearchController.this, MessengerActivity.class);
+                    intent.putExtra("name", input);
+                    startActivity(intent);
+                }
+                else{
+                    showAlertToUser("BattleTag not found, try again");//Prompts user that "BattleTag not found, try again"
+                }
+
             }
 
         });

@@ -15,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MessengerActivity extends AppCompatActivity {
     EditText message;
+    private String name;
     private FirebaseListAdapter<chatMessage> adapter;
 
 
@@ -24,6 +25,11 @@ public class MessengerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messenger);
+
+
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("namema");
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         message = (EditText)findViewById(R.id.message);
 
@@ -33,25 +39,17 @@ public class MessengerActivity extends AppCompatActivity {
                 R.layout.message, FirebaseDatabase.getInstance().getReference()) {
             @Override
             protected void populateView(View v, chatMessage model, int position) {
-                // Get references to the views of message.xml
                 TextView messageText = (TextView)v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView)v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
-
-                // Set their text
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
-
-                // Format the date before showing it
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
                         model.getMessageTime()));
             }
         };
 
         listOfMessages.setAdapter(adapter);
-
-
-
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +59,7 @@ public class MessengerActivity extends AppCompatActivity {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference();
                 myRef.push().setValue(new chatMessage(
-                        message.getText().toString(),"user")
+                        message.getText().toString(),name)
                 );
                 message.setText("");
 
