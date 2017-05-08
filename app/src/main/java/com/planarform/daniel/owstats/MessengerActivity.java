@@ -28,7 +28,7 @@ public class MessengerActivity extends AppCompatActivity {
 
 
         Bundle bundle = getIntent().getExtras();
-        name = bundle.getString("namema");
+        name = bundle.getString("name");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         message = (EditText)findViewById(R.id.message);
