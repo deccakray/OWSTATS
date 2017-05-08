@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -170,7 +171,11 @@ public class PlayerStatsFragment extends Fragment {
         Drawable diamond = getResources().getDrawable(R.drawable.rank_5);
         Drawable master = getResources().getDrawable(R.drawable.rank_6);
         Drawable grandmaster = getResources().getDrawable(R.drawable.rank_7);
-        if(rank <= 1499 && rank >= 1){
+        Drawable nullRank = getResources().getDrawable(R.drawable.emptyx_l);
+        if(rank==null) {
+            rankIcon.setImageDrawable(nullRank);
+        }
+        else if(rank <= 1499 && rank >= 0){
             rankIcon.setImageDrawable(bronze);
         }
         else if (rank <= 1999 && rank >= 1500) {
@@ -200,12 +205,24 @@ public class PlayerStatsFragment extends Fragment {
         levelProgressBar.setProgress(levelProgressValue);
 
         // rank value
-        Integer rank_ = rank.intValue();
-        rankProgress.setText(Integer.toString(rank_));
+        if(rank==null){
+            rankProgress.setText("NO RANK");
+        }
+        else {
+            Integer rank_ = rank.intValue();
+            rankProgress.setText(Integer.toString(rank_));
+        }
 
+        float rankProgressValue;
         // set value for rank progress bar
-        float rankProgressValue = Float.valueOf(String.valueOf(rank));
-        rankProgressBar.setProgress(rankProgressValue);
+        if(rank==null){
+            rankProgressBar.setProgress((float)0);
+        }
+        else {
+            rankProgressValue = Float.valueOf(String.valueOf(rank));
+            rankProgressBar.setProgress(rankProgressValue);
+        }
+
 
 
 
