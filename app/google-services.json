@@ -1,35 +1,38 @@
 {
   "project_info": {
-    "project_number": "415706196303",
-    "firebase_url": "https://owstats-c0881.firebaseio.com",
-    "project_id": "owstats-c0881",
-    "storage_bucket": "owstats-c0881.appspot.com"
+    "project_number": "165336803819",
+    "firebase_url": "https://overwatch-stats-and-friends.firebaseio.com",
+    "project_id": "overwatch-stats-and-friends",
+    "storage_bucket": "overwatch-stats-and-friends.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:415706196303:android:18011664b18c57b8",
+        "mobilesdk_app_id": "1:165336803819:android:18011664b18c57b8",
         "android_client_info": {
           "package_name": "com.planarform.daniel.owstats"
         }
       },
       "oauth_client": [
         {
-          "client_id": "415706196303-e93dnpq0ddfl05uhtrch5mochfsn287e.apps.googleusercontent.com",
+          "client_id": "165336803819-4tusib6ttj6rtjanp3v6u9og0fp7oabt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.planarform.daniel.owstats",
-            "certificate_hash": "ec7b5592e597a6700e0536ffc7752786ca732825"
+            "certificate_hash": "19dc443d8320a96e7a9ff41d5444b87b729f9984"
           }
         },
         {
-          "client_id": "415706196303-ml3dkiv6ncq4oj13e57em6pt8gemcp0n.apps.googleusercontent.com",
+          "client_id": "165336803819-vol5cs5e6kcvgv2f4ep978fjr71e70hp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAVCe9pQY1ElbsNAnXe8S_WAIHjfCCSGzc"
+          "current_key": "AIzaSyA5u5QuYkzNxH_3a3Wo3d02E2MJZfDZBcI"
+        },
+        {
+          "current_key": "AIzaSyBC8bNswv1-nNN5p8-IZ9LR4YKC0J98W54"
         }
       ],
       "services": {
@@ -40,7 +43,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "415706196303-ml3dkiv6ncq4oj13e57em6pt8gemcp0n.apps.googleusercontent.com",
+              "client_id": "165336803819-vol5cs5e6kcvgv2f4ep978fjr71e70hp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

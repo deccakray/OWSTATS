@@ -9,6 +9,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
         android:id="@+id/message_user"
+        android:textColor="@color/colorAccent"
         android:textStyle="normal|bold" />
 
     <TextView
@@ -17,7 +18,9 @@
         android:layout_alignBottom="@+id/message_user"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:id="@+id/message_time" />
+        android:id="@+id/message_time"
+        android:textColor="@color/colorAccent"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,6 +31,8 @@
         android:layout_marginTop="5dp"
         android:id="@+id/message_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textColor="@color/white" />
+
 
 </RelativeLayout>
