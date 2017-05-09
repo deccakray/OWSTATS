@@ -65,6 +65,7 @@ public class PlayerStatsFragment extends Fragment {
         CircleProgressBar rankProgressBar = (CircleProgressBar) rootView.findViewById(R.id.rank_progressBar);
         rankIcon = (ImageView)rootView.findViewById(R.id.rank_icon);
 
+        /* Setting TextViews for each element. This displays texts and titles to the screen*/
         TextView featureStatsTitleView = (TextView)rootView.findViewById(R.id.featured_stats_avg);
         TextView careerStatsTitleView = (TextView)rootView.findViewById(R.id.career_stats_title);
         TextView rankView = (TextView)rootView.findViewById(R.id.rank);
