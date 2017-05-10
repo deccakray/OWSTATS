@@ -22,20 +22,18 @@ public class OWOverallStats {
     Double games;
     Double level;
     private Context context;
+
+    /* Maping Overall Stats */
     public OWOverallStats(Map stats) {
-
-            this.losses = (Double)stats.get("losses");
-            this.compRank = (Double)stats.get("comprank");
-            this.winRate = (Double)stats.get("win_rate");
-            this.prestige = (Double)stats.get("prestige");
-            this.avatar = (String)stats.get("avatar");
-            this.tier = (String)stats.get("tier");
-            this.rankImage = (String)stats.get("rank_image");
-            this.wins = (Double)stats.get("wins");
-            this.games = (Double)stats.get("games");
-            this.level = (Double)stats.get("level");
-
-
-
+            this.losses = (Double)stats.get("losses"); //losses
+            this.compRank = (Double)stats.get("comprank");// competitive rank
+            this.winRate = (Double)stats.get("win_rate"); //win rate
+            this.prestige = (Double)stats.get("prestige"); //prestige
+            this.avatar = (String)stats.get("avatar"); // avatar
+            this.tier = (String)stats.get("tier"); // tier
+            this.rankImage = (String)stats.get("rank_image"); //rank image
+            this.wins = (Double)stats.get("wins"); // wins
+            this.games = (Double)stats.get("games"); //games
+            this.level = (Double)stats.get("level"); //level
     }
 }
