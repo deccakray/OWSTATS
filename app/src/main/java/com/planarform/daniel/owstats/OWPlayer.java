@@ -12,6 +12,9 @@ import java.util.Map;
 
 /**
  * Created by Daniel on 4/10/17.
+ * This is the class used for creating an OWPlayer Object.
+ * This object is used to map all the data so it can easily be
+ * accessible throughout the Application.
  */
 
 public class OWPlayer implements Serializable{
@@ -44,6 +47,15 @@ public class OWPlayer implements Serializable{
     // int dvaElims = player.usStats.competitive.her.dva.eliminations;
     // int deaths = player.krStats.quickplay.overall.deaths;
 
+    /**
+     * Method that Sets all the stats by linking all the individual
+     * maps via Classes. Each hero has their own class with their own attributes.
+     * This method calls the OWStats() constructor which calls another constructor
+     * until all stats have been mapped.
+     * The stats are called like this (ex) player.usStats.competitive.overall.deaths;
+     * @param stats
+     * @return
+     */
     private boolean setAllStats(Map stats) {
        boolean didSetStat = false;
             if(stats.get("us")!=null) {
@@ -66,6 +78,12 @@ public class OWPlayer implements Serializable{
         return didSetStat;
     }
 
+    /**
+     * Method used for determining the validity of a BattleTag
+     * @param battleTag
+     * @return
+     */
+
     public static boolean isValidBattleTag(String battleTag) {
         // validate battle tag
         if(battleTag.length() < 8 || battleTag.length() > 16) {
@@ -77,6 +95,13 @@ public class OWPlayer implements Serializable{
 
         return true;    }
 
+    /**
+     * Method used for setting the JSON response into a rootMap that will
+     * be used for the OWPlayer object to setAllStats()
+     * @param response
+     * @return
+     * @throws Exception
+     */
     public static Map setJSON(String response) throws Exception{
             Map rootObject;
             try {

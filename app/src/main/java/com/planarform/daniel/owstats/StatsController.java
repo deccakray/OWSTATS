@@ -1,15 +1,10 @@
 package com.planarform.daniel.owstats;
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.ContactsContract;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,12 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.android.volley.VolleyError;
-
-import org.w3c.dom.Text;
-
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,6 +38,7 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
     protected void onCreate(Bundle savedInstanceStates) {
         super.onCreate(savedInstanceStates);
         setContentView(R.layout.stats_layout);
+        // Font used from Assets/Fonts
         Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
 
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -78,6 +69,7 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
         bundle.putSerializable("player", player);
         intent.putExtras(bundle);
 
+        //Adding Avatar to Toolbar at top of screen
         avatarURL = player.usStats.quickplay.overall.avatar;
         this.setImageIconToolBar(avatarURL);
         playerNameView = (TextView)findViewById(R.id.player_name);
@@ -86,10 +78,12 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
         playerNameView.setText(playerName[0].toUpperCase());
 
         //Adding the tabs using addTab() method
+        // Player Stats, Top Heroes, Achievements
         tabLayout.addTab(tabLayout.newTab().setText(tabs[0]));
         tabLayout.addTab(tabLayout.newTab().setText(tabs[1]));
         tabLayout.addTab(tabLayout.newTab().setText(tabs[2]));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.pager);
 
@@ -101,18 +95,9 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
 
         //Adding onTabSelectedListener to swipe views
         tabLayout.setOnTabSelectedListener(this);
-
-
-        // Getting data back from SearchController via Intents
-
-
-
-//        Double deaths = player.usStats.quickplay.game.turretsDestroyed;
-//        test.setText(Double.toString(deaths));
     }
     @Override
     public void onBackPressed() {
-        // do something on back.
         return;
     }
 
@@ -131,6 +116,10 @@ public class StatsController extends AppCompatActivity implements TabLayout.OnTa
 
     }
 
+    /**
+     * Function used for setting avatar at toolbar from URL given by JSON response from OWAPI endpoint
+     * @param URL
+     */
     public void setImageIconToolBar(String URL) {
         networkManager = NetworkingManager.getInstance();
         networkManager.sendImageRequest(URL, new NetworkingListener<String, VolleyError>() {

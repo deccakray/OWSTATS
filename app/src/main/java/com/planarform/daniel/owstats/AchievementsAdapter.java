@@ -1,24 +1,23 @@
+
+/**
+ * Created by Daniel on 5/7/17.
+ * Adapater class for achievements. This class
+ * sets the achievements dynamically and fills the
+ * GridView that is being implemented.
+ */
 package com.planarform.daniel.owstats;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
-/**
- * Created by Daniel on 5/7/17.
- */
 
 
 public class AchievementsAdapter extends BaseAdapter {

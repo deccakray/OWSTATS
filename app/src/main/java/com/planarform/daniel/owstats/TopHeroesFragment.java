@@ -2,27 +2,22 @@ package com.planarform.daniel.owstats;
 
 /**
  * Created by Daniel on 5/1/17.
+ * Class that shows the Fragment view for
+ * the Top Heroes tab.
  */
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.HttpAuthHandler;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import static com.planarform.daniel.owstats.SearchController.context;
@@ -34,7 +29,6 @@ public class TopHeroesFragment extends Fragment {
     ArrayList<Double> preheroValueList = new ArrayList<>();
     double[] preheroValue;
     ArrayList<String> heroValueList = new ArrayList<>();
-
     String[] heroNames;
     ArrayList<String> heroNamesList = new ArrayList<>();
     int[] heroIcons;
@@ -48,9 +42,6 @@ public class TopHeroesFragment extends Fragment {
         // Get data from OWPLAYER
         Bundle bundle = getArguments();
         OWPlayer player = (OWPlayer) bundle.getSerializable("player");
-        HashMap<String, Integer> heroNametoIconMap = new HashMap<>();
-        HashMap<String, String> heroValuetoNameMap = new HashMap<>();
-        HashMap<String, Object> heroNametoValueMap = new HashMap<>();
         TextView selectTextView = (TextView)rootView.findViewById(R.id.select);
         selectTextView.setTypeface(OWFONT);
 
@@ -82,6 +73,10 @@ public class TopHeroesFragment extends Fragment {
         double zaryaTime = 0.0;
         double zenyattaTime = 0.0;
 
+
+        // Getting playtime for each hero.
+        // This should have been dynamically implemented instead of
+        // hard coded.
         try {
             anaTime = player.usStats.competitive.heroPlaytime.anaTime;
              bastionTime = player.usStats.competitive.heroPlaytime.bastionTime;
@@ -136,17 +131,6 @@ public class TopHeroesFragment extends Fragment {
             preheroValueList.add(preheroValue[i]);
         }
 
-
-        // Fill heroNameValue Maps so i can have bi directional lookup
-        for(int i = 0; i < heroNames.length; i ++) {
-            heroNametoValueMap.put(heroNamesList.get(i), preheroValueList.get(i));
-        }
-
-
-        // sort and reverse the lists to make it (high to low)
-//        Collections.sort(preheroValueList);
-//        Collections.reverse(preheroValueList);
-
         // Aids for-loop to determine Hours, Minutes, Seconds (Rounds off remainders)
         for(int i = 0; i < preheroValueList.size(); i++) {
             // to change to hours
@@ -192,67 +176,6 @@ public class TopHeroesFragment extends Fragment {
                 }
             }
         }
-
-
-
-
-
-
-//        HashMap<Double, String> preheroValuetoPost = new HashMap<>();
-
-        // to retrieve value from map
-        for(int i = 0; i < heroValueList.size(); i++) {
-           heroNametoValueMap.put(heroNamesList.get(i), heroValueList.get(i));
-        }
-        // to retrieve name from map
-        for(int i = 0; i < heroValueList.size(); i++) {
-            heroValuetoNameMap.put(heroValueList.get(i), heroNamesList.get(i));
-        }
-        // to retrive icon from map
-        for(int i = 0; i< heroNamesList.size(); i ++) {
-            heroNametoIconMap.put(heroNamesList.get(i), heroIcons[i]);
-        }
-
-        // Getting max
-//        for(int i = 0; i < heroValueList.size(); i++) {
-//            String[] parts = heroValueList.get(i).split(" ");
-//            // get the value on left side of split parts[]
-//            int value = Integer.parseInt(parts[i]);
-//            String measurement = (parts[i+1]);
-//            // Always stick the first value inside the maxValueList
-//            if(maxValueList == null){
-//                maxValueList.add(value);
-//            }
-//            if(measurement.equals("hours")) {
-//
-//                maxValueList.add(parts[i])
-//            }
-//            else if(measurement.equals("minutes")) {
-//
-//            }
-//            else if(measurement.equals("seconds")) {
-//
-//            }
-//
-//        }
-//        do {
-//
-//        }while (heroValueList!=null);
-
-
-        // Order heroValueList
-
-
-        // fill hero name map
-//        for(int i = 0; i < heroValueList.size(); i++) {
-//
-//            heroNametoValueMapFinal.put(heroNamesList.get(i), preheroValuetoPost.get(i) );
-//        }
-
-        // is this hero the highest value?
-        // its value is on top (first in list), second highest is next and so forth
-        //
-
 
         // Spinner element
         selectStat = (Spinner) rootView.findViewById(R.id.hero_spinner);
@@ -300,13 +223,3 @@ public class TopHeroesFragment extends Fragment {
         return rootView;
     }
 }
-
-//    @Override
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//
-//    }

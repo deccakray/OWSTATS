@@ -13,6 +13,7 @@ import java.util.Map;
 
 /**
  * Created by Daniel on 5/6/17.
+ * This is the class that creates a PlayerManager object.
  */
 
 public class OWPlayerManager {
@@ -21,6 +22,12 @@ public class OWPlayerManager {
     private OWPlayerManager() {
 
     }
+
+    /**
+     * This method retrieves inputstream from the local JSON file. It then stores that
+     * data into a Map.
+     * @return
+     */
     public Map getAchievementMetaData() {
         Gson gson = new Gson();
         InputStream raw =  context.getResources().openRawResource(R.raw.achievement_meta_data);

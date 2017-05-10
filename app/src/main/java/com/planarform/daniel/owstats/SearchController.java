@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,24 +16,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.VolleyError;
-import com.google.gson.Gson;
-import com.google.gson.JsonParseException;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static android.R.attr.bitmap;
-import static android.R.attr.title;
-
 /**
  * Created by Daniel on 3/22/17.
  * This class will ask for the user to enter any battletag and search the stats
  * pertaining to that battletag
+ * He or she will also be able to enter a chatroom with other members of the Application
  */
 // This class will ask for the user to enter any battletag and search the stats
 // the stats pertaining to that battletag
@@ -44,6 +36,7 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
     EditText searchBar;
     Spinner platformChooser;
     String input = "";
+
 
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
@@ -56,9 +49,6 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
         platformChooser = (Spinner)findViewById(R.id.platform_chooser);
         Typeface OWFONT = Typeface.createFromAsset(context.getAssets(),  "fonts/big_noodle_titling_oblique.ttf");
         TextView titleView = (TextView)findViewById(R.id.main_title_view);
-
-
-
         titleView.setTypeface(OWFONT);
 
         // Spinner click listener
@@ -77,14 +67,15 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
+        // Aattaching data adapter to spinner
         platformChooser.setAdapter(dataAdapter);
 
         // I STILL NEED TO LINK SPINNER VALUES TO BUNDLE ...
         String selection = platformChooser.getSelectedItem().toString();
         final String regionSelection = this.getRegionSelection(selection);
 
-
+        // OnClickListener for button "Search"
+        // This button starts the whole stats displaying activity --> StatsController via Intents
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,18 +91,21 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
                         public void onResponse(String response) {
                             try {
 
+                                // Create a rootMap from JSON response from the OWAPI endpoint
                                 Map playerMap = OWPlayer.setJSON(response);
                                 playerMap.put("battle_tag", input);
                                 playerMap.put("region_selection", regionSelection);
 
+                                // Throw rootMap into a HashMap
                                 HashMap<String, Object> hashy = new HashMap<String, Object>(playerMap);
 
+                                // Use Intents to send data from SearchController to StatsController
                                 Intent intent = new Intent(SearchController.this, StatsController.class);
                                 intent.putExtra("player_map", hashy);
                                 startActivity(intent);
 
-
-                            } catch (Exception e) {
+                            }// Catches Server Request exceptions
+                            catch (Exception e) {
                                 e.printStackTrace();
                                 showAlertToUser(e.getMessage());
                             }
@@ -125,23 +119,15 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
                         public void onImageDownloaded(Bitmap b) {
 
                         }
-
-
-
-
-
-
                     });
-
-
-
                 }
                 else {
-                    showAlertToUser("BattleTag not found, try again");//Prompts user that "BattleTag not found, try again"
+                    //Prompts user that "BattleTag not found, try again"
+                    showAlertToUser("BattleTag not found, try again");
                 }
             }
         });
-
+        // OnClickListener for the messengerButton
         messengerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,7 +146,11 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
         });
     }
 
-
+    /**
+     *
+     * @param selection String selected from spinner
+     * @return regionSelection -- to be used for Map Calls.
+     */
     public String getRegionSelection(String selection) {
         String regionSelection = "";
         if(selection.equals("US")) {
@@ -201,6 +191,14 @@ public class SearchController extends Activity implements AdapterView.OnItemSele
         return context;
     }
 
+    /**
+     *
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     * For the Spinner to display a 'selected' Toast at the bottom of the screen when chosen
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item

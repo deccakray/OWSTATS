@@ -22,13 +22,21 @@ The team members are active players of the game, Overwatch. We thought it would 
 OWAPI API Docs: https://github.com/SunDwarf/OWAPI/blob/master/api.md
 
 ## Notes
+
+#### How the app is currently structured
+The Main Activity (SearchController) asks for user input of their battle tag
+    The Display Activity (StatsController) displays stats for the given battle tag. (Has Three Tabs)
+        Tab One (Player Stats) --> displays General player stats
+        Tab Two (Top Heroes) --> displays time played stats via Progress bar
+        Tab Three (Achievements) --> displays all achievements. White ones indicate achieved achievements.
+    The Messenger Activity (MessengerActivity) allows users to participate in a group chatroom.
+    
+
 #### Research
 A few hours were spent on researching on how to use github, like how to retrieve and update the code repository by using the command prompt or some of us using GitHub Desktop. This is new for some of us as we haven’t done group projects like this in depth. How to send a GET request to the server was something else that needed to be researched.
 
-A numbers of hours spent researching the OWAPI API Docs that we are using to fetch data from. Also researching Firebase for the Chat messaging feature of our application. 
+A numbers of hours spent researching the OWAPI API Docs that we are using to fetch data from and how to model that data. Also researching Firebase for the Chat messaging feature of our application. 
 
 #### Challenges
-Connection to databse, UI, chat messaging
-
-#### Debugging Issues
+Connection to databse, Data modeling, chat messaging, and Implementing dynamic UIs
 

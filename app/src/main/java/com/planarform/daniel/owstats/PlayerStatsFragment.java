@@ -2,16 +2,12 @@ package com.planarform.daniel.owstats;
 
 /**
  * Created by Daniel on 5/1/17.
+ * Fragment View for the Playerstats tab.
  */
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -19,25 +15,9 @@ import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
-import com.github.lzyzsd.circleprogress.DonutProgress;
-
-import org.w3c.dom.Text;
-
-import java.io.IOException;
-import java.net.URL;
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static com.planarform.daniel.owstats.SearchController.context;
 
 public class PlayerStatsFragment extends Fragment {

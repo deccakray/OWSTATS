@@ -10,21 +10,25 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
-    //integer to count number of tabs
+    // Tnteger to count number of tabs
     int tabCount;
     Bundle bundle;
-    //Constructor to the class
+    // Constructor to the class
     public TabsPagerAdapter(FragmentManager fm, int tabCount, Bundle bundle) {
         super(fm);
-        //Initializing tab count
+        // Initializing tab count
         this.tabCount= tabCount;
         this.bundle = bundle;
     }
 
-    //Overriding method getItem
+    /**
+     * Creates a new Fragment view based on which position (0,1,2)
+     * @param position
+     * @return
+     */
     @Override
     public Fragment getItem(int position) {
-        //Returning the current tabs
+        // Returning the current tabs
         switch (position) {
             case 0:
                 PlayerStatsFragment playerStatsTab = new PlayerStatsFragment();
@@ -42,8 +46,6 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
                 return null;
         }
     }
-
-    //Overriden method getCount to get the number of tabs
     @Override
     public int getCount() {
         return tabCount;

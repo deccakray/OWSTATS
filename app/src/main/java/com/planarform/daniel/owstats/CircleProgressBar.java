@@ -14,7 +14,8 @@ import android.view.animation.DecelerateInterpolator;
 /**
  * A subclass of {@link android.view.View} class for creating a custom circular progressBar
  *
- * Created by Pedram on 2015-01-06.
+ * Created by Daniel 5/4/17. (Credit to Pedram)
+ * Class used for created the Circle Progress bars on the PlayerStats tab.
  */
 public class CircleProgressBar extends View {
 

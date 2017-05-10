@@ -23,6 +23,10 @@ public class OWStats {
         this.fillAchievements((Map)stats.get("achievements"));
     }
 
+    /**
+     * This method fills the achievements map created from getAchievementMetaData()
+     * @param stats
+     */
     public void fillAchievements(Map stats) {
         Map metaData = OWPlayerManager.getInstance().getAchievementMetaData();
         String[] typeKeys = {"tank", "offense", "maps", "general", "defense", "special", "support"};

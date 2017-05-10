@@ -5,25 +5,19 @@ import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-
-/**
- * Created by Daniel on 5/4/17.
- */
-
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.HashMap;
+/**
+ * Created by Daniel on 5/4/17.
+ * This class is the Top Hero List View adapter, which
+ * sets the view for the respective Fragment. The view contains
+ * a listview each having an independent row dynamically created
+ */
 
-import static com.planarform.daniel.owstats.SearchController.context;
 
 public class TopHeroListViewAdapter extends BaseAdapter{
     ArrayList<String> heroNames;

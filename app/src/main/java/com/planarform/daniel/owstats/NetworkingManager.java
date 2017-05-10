@@ -2,14 +2,12 @@ package com.planarform.daniel.owstats;
 
 /**
  * Created by Daniel on 3/22/17.
+ * NetworkingManager class that handles all network calls made to
+ * a server. This class implements Volley.
  */
-        import android.app.AlertDialog;
         import android.content.Context;
-        import android.content.DialogInterface;
-        import android.content.Intent;
         import android.graphics.Bitmap;
         import android.widget.ImageView;
-
         import com.android.volley.Request;
         import com.android.volley.RequestQueue;
         import com.android.volley.Response;
