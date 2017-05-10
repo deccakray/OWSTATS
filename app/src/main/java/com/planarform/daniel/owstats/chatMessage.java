@@ -4,6 +4,7 @@ import java.util.Date;
 
 /**
  * Created by Mark Mendoza on 5/3/2017.
+ * Model for the chat message
  */
 
 public class chatMessage {
@@ -14,8 +15,6 @@ public class chatMessage {
     public chatMessage(String messageText, String messageUser) {
         this.messageText = messageText;
         this.messageUser = messageUser;
-
-        // Initialize to current time
         messageTime = new Date().getTime();
     }
 

@@ -27,14 +27,17 @@ public class MessengerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_messenger);
 
 
+        //Retrieve name string from the SearchController 
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("name");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         message = (EditText)findViewById(R.id.message);
 
+        
         ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
 
+        //Fill the window with messages currently in the database
         adapter = new FirebaseListAdapter<chatMessage>(this, chatMessage.class,
                 R.layout.message, FirebaseDatabase.getInstance().getReference()) {
             @Override
@@ -52,6 +55,7 @@ public class MessengerActivity extends AppCompatActivity {
         listOfMessages.setAdapter(adapter);
 
 
+        //When send button is pressed create a new chatMessage object and push it to firebase
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
